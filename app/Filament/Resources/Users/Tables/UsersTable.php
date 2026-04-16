@@ -3,9 +3,11 @@
 namespace App\Filament\Resources\Users\Tables;
 
 use Filament\Actions\BulkActionGroup;
+use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
+use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
@@ -20,11 +22,7 @@ class UsersTable
                 TextColumn::make('email')
                     ->label('Email address')
                     ->searchable(),
-                TextColumn::make('email_verified_at')
-                    ->dateTime()
-                    ->sortable(),
-                TextColumn::make('avatar')
-                    ->searchable(),
+                ImageColumn::make('avatar'),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
@@ -38,8 +36,9 @@ class UsersTable
                 //
             ])
             ->recordActions([
-                ViewAction::make(),
                 EditAction::make(),
+                ViewAction::make(),
+                DeleteAction::make(),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([
