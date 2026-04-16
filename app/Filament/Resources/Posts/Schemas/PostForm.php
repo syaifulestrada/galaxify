@@ -2,10 +2,14 @@
 
 namespace App\Filament\Resources\Posts\Schemas;
 
+use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
+use Filament\Schemas\Components\Section;
+use Filament\Schemas\Components\Utilities\Set;
 use Filament\Schemas\Schema;
+use Illuminate\Support\Str;
 
 class PostForm
 {
@@ -13,18 +17,27 @@ class PostForm
     {
         return $schema
             ->components([
-                Select::make('user_id')
-                    ->relationship('user', 'name')
-                    ->required(),
-                TextInput::make('title')
-                    ->required(),
-                TextInput::make('slug')
-                    ->required(),
-                TextInput::make('cover')
-                    ->required(),
-                Textarea::make('content')
-                    ->required()
-                    ->columnSpanFull(),
+                Section::make()
+                    ->schema([
+                        TextInput::make('title')
+                            ->live(onBlur: true)
+                            ->afterStateUpdated(fn(Set $set, ?string $state) => $set('slug', Str::slug($state)))
+                            ->required(),
+                        TextInput::make('slug')
+                            ->readOnly()
+                            ->required(),
+                        Select::make('category')
+                            ->relationship('categories', 'name')
+                            ->searchable()
+                            ->preload()
+                            ->multiple()
+                            ->required(),
+                        FileUpload::make('cover')
+                            ->required(),
+                        Textarea::make('content')
+                            ->required(),
+                    ])
+                    ->columnSpanFull()
             ]);
     }
 }
