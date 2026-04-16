@@ -21,7 +21,7 @@ class PostForm
                     ->schema([
                         TextInput::make('title')
                             ->live(onBlur: true)
-                            ->afterStateUpdated(fn(Set $set, ?string $state) => $set('slug', Str::slug($state)))
+                            ->afterStateUpdated(fn (Set $set, ?string $state) => $set('slug', Str::slug($state)))
                             ->required(),
                         TextInput::make('slug')
                             ->readOnly()
@@ -37,7 +37,7 @@ class PostForm
                         Textarea::make('content')
                             ->required(),
                     ])
-                    ->columnSpanFull()
+                    ->columnSpanFull(),
             ]);
     }
 }
