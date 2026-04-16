@@ -27,7 +27,7 @@ class UserForm
                             ->required(),
                         FileUpload::make('avatar'),
                     ])
-                    ->columnSpanFull()
+                    ->columnSpanFull(),
             ]);
     }
 }

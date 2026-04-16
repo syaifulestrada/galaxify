@@ -32,7 +32,7 @@ class UserInfolist
                             ->columnSpanFull()
                             ->placeholder('-'),
                     ])
-                    ->columnSpanFull()
+                    ->columnSpanFull(),
             ]);
     }
 }

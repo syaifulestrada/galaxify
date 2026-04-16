@@ -2,10 +2,10 @@
 
 namespace App\Filament\Resources\Categories;
 
+use App\Enum\NavigationGroup;
 use App\Filament\Resources\Categories\Pages\ManageCategories;
 use App\Models\Category;
 use BackedEnum;
-use UnitEnum;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
@@ -17,7 +17,7 @@ use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
-use App\Enum\NavigationGroup;
+use UnitEnum;
 
 class CategoryResource extends Resource
 {
@@ -25,7 +25,7 @@ class CategoryResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::Tag;
 
-    protected static string | UnitEnum | null $navigationGroup = NavigationGroup::ContentManagement;
+    protected static string|UnitEnum|null $navigationGroup = NavigationGroup::ContentManagement;
 
     protected static ?string $recordTitleAttribute = 'name';
 
@@ -38,7 +38,7 @@ class CategoryResource extends Resource
                         TextInput::make('name')
                             ->required(),
                     ])
-                    ->columnSpanFull()
+                    ->columnSpanFull(),
             ]);
     }
 
