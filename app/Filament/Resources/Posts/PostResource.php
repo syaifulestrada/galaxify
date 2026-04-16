@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Posts;
 
+use App\Enum\NavigationGroup;
 use App\Filament\Resources\Posts\Pages\CreatePost;
 use App\Filament\Resources\Posts\Pages\EditPost;
 use App\Filament\Resources\Posts\Pages\ListPosts;
@@ -15,12 +16,15 @@ use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
+use UnitEnum;
 
 class PostResource extends Resource
 {
     protected static ?string $model = Post::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+
+    protected static string|UnitEnum|null $navigationGroup = NavigationGroup::ContentManagement;
 
     protected static ?string $recordTitleAttribute = 'title';
 
