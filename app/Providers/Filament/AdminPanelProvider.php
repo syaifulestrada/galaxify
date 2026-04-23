@@ -68,13 +68,13 @@ class AdminPanelProvider extends PanelProvider
                         rules: 'mimes:jpg,jpeg,png|max:1024'
                     )
                     ->shouldShowDeleteAccountForm(false)
-                    ->shouldShowBrowserSessionsForm(false)
+                    ->shouldShowBrowserSessionsForm(false),
             ])
             ->userMenuItems([
                 'profile' => Action::make('profile')
-                    ->label(fn() => auth()->user()->name)
-                    ->url(fn(): string => EditProfilePage::getUrl())
-                    ->icon('heroicon-m-user-circle')
+                    ->label(fn () => auth()->user()->name)
+                    ->url(fn (): string => EditProfilePage::getUrl())
+                    ->icon('heroicon-m-user-circle'),
             ]);
     }
 }
