@@ -1,6 +1,5 @@
 <x-layouts.app subTitle="Home">
 
-    {{-- HERO --}}
     <section id="hero"
         class="min-h-screen max-w-7xl mx-auto px-6 pt-20 flex flex-col md:flex-row items-center justify-center md:justify-between gap-10">
 
@@ -55,14 +54,13 @@
         </div>
 
         <div class="flex-1 w-full hidden md:block">
-            <img src="{{ asset('laptop.webp') }}" alt="Hero Image" class="rounded-2xl w-full object-cover shadow-lg">
+            <img src="{{ asset('laptop.webp') }}" alt="Hero cover" class="rounded-2xl w-full object-cover shadow-lg">
         </div>
 
     </section>
 
     <div class="border-t border-gray-200"></div>
 
-    {{-- ABOUT US --}}
     <section id="aboutUs" class="min-h-screen bg-gray-50 w-full px-6 flex flex-col items-center justify-center py-20">
         <h2 class="font-bold text-3xl md:text-4xl text-center mb-10 md:mb-16">About Us</h2>
         <div class="space-y-4">
@@ -87,7 +85,6 @@
 
     <div class="border-t border-gray-200"></div>
 
-    {{-- SERVICES --}}
     <section id="services" class="min-h-screen w-full px-6 flex flex-col items-center justify-center py-20">
         <h2 class="font-bold text-3xl md:text-4xl text-center mb-10 md:mb-16">Services</h2>
 
@@ -133,7 +130,6 @@
                             d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.325.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 0 1 1.37.49l1.296 2.247a1.125 1.125 0 0 1-.26 1.431l-1.003.827c-.293.241-.438.613-.43.992a7.723 7.723 0 0 1 0 .255c-.008.378.137.75.43.991l1.004.827c.424.35.534.955.26 1.43l-1.298 2.247a1.125 1.125 0 0 1-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.47 6.47 0 0 1-.22.128c-.331.183-.581.495-.644.869l-.213 1.281c-.09.543-.56.94-1.11.94h-2.594c-.55 0-1.019-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 0 1-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 0 1-1.369-.49l-1.297-2.247a1.125 1.125 0 0 1 .26-1.431l1.004-.827c.292-.24.437-.613.43-.991a6.932 6.932 0 0 1 0-.255c.007-.38-.138-.751-.43-.992l-1.004-.827a1.125 1.125 0 0 1-.26-1.43l1.297-2.247a1.125 1.125 0 0 1 1.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.086.22-.128.332-.183.582-.495.644-.869l.214-1.28Z" />
                         <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
                     </svg>
-
                 </x-slot:icon>
                 <x-slot:title>
                     IOT (Internet Of Things)
@@ -174,6 +170,255 @@
                 </svg>
             </a>
         </div>
+    </section>
+
+    <div class="border-t border-gray-200"></div>
+
+    <section id="projects" class="min-h-screen w-full px-6 flex flex-col items-center justify-center py-20">
+        <h2 class="font-bold text-3xl md:text-4xl text-center mb-10 md:mb-16">Projects</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-4xl">
+
+            <x-project-card>
+                <x-slot:cover>
+                    <img class="rounded-base" src="{{ asset('projects/1.webp') }}" alt="Company Website" />
+                </x-slot:cover>
+
+                <x-slot:title>
+                    Corporate Website
+                </x-slot:title>
+
+                <x-slot:content>
+                    A modern and responsive corporate website designed to strengthen brand identity and online presence.
+                </x-slot:content>
+            </x-project-card>
+
+            <x-project-card>
+                <x-slot:cover>
+                    <img class="rounded-base" src="{{ asset('projects/1.webp') }}" alt="E-Commerce Platform" />
+                </x-slot:cover>
+
+                <x-slot:title>
+                    E-Commerce Platform
+                </x-slot:title>
+
+                <x-slot:content>
+                    A full-featured online store with seamless shopping experience, payment integration, and admin
+                    dashboard.
+                </x-slot:content>
+            </x-project-card>
+
+            <x-project-card>
+                <x-slot:cover>
+                    <img class="rounded-base" src="{{ asset('projects/1.webp') }}" alt="Portfolio Website" />
+                </x-slot:cover>
+
+                <x-slot:title>
+                    Portfolio Website
+                </x-slot:title>
+
+                <x-slot:content>
+                    A personal portfolio website to showcase projects, skills, and professional experience.
+                </x-slot:content>
+            </x-project-card>
+
+            <x-project-card>
+                <x-slot:cover>
+                    <img class="rounded-base" src="{{ asset('projects/1.webp') }}" alt="Landing Page" />
+                </x-slot:cover>
+
+                <x-slot:title>
+                    Product Landing Page
+                </x-slot:title>
+
+                <x-slot:content>
+                    A high-converting landing page focused on promoting digital products with engaging design.
+                </x-slot:content>
+            </x-project-card>
+
+            <x-project-card>
+                <x-slot:cover>
+                    <img class="rounded-base" src="{{ asset('projects/1.webp') }}" alt="Blog Platform" />
+                </x-slot:cover>
+
+                <x-slot:title>
+                    Blog Platform
+                </x-slot:title>
+
+                <x-slot:content>
+                    A content management system for publishing articles with categories, comments, and easy navigation.
+                </x-slot:content>
+            </x-project-card>
+
+            <x-project-card>
+                <x-slot:cover>
+                    <img class="rounded-base" src="{{ asset('projects/1.webp') }}" alt="Admin Dashboard" />
+                </x-slot:cover>
+
+                <x-slot:title>
+                    Admin Dashboard
+                </x-slot:title>
+
+                <x-slot:content>
+                    An interactive dashboard for managing data, users, and analytics in a clean interface.
+                </x-slot:content>
+            </x-project-card>
+
+
+        </div>
+
+        <div class="mt-10">
+            <a href="/"
+                class="inline-flex items-center gap-2 text-[#fd9a00] border border-[#fd9a00] hover:bg-[#fd9a00] hover:text-white font-semibold px-6 py-3 rounded-lg transition">
+                More Projects
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <div class="border-t border-gray-200"></div>
+
+    <section id="member" class="min-h-screen w-full px-6 flex flex-col items-center justify-center py-20">
+        <h2 class="font-bold text-3xl md:text-4xl text-center mb-10 md:mb-16">Member</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-4xl">
+
+            <x-member-card>
+                <x-slot:profile>
+                    <img class="rounded-base" src="https://i.pravatar.cc/300?img=7" alt="" />
+                </x-slot:profile>
+                <x-slot:name>
+                    Ethan Carter
+                </x-slot:name>
+                <x-slot:roles>
+                    Backend Engineer
+                </x-slot:roles>
+                <x-slot:content>
+                    Builds scalable APIs and robust backend systems using modern frameworks and clean architecture
+                    principles.
+                </x-slot:content>
+            </x-member-card>
+
+            <x-member-card>
+                <x-slot:profile>
+                    <img class="rounded-base" src="https://i.pravatar.cc/300?img=7" alt="" />
+                </x-slot:profile>
+                <x-slot:name>
+                    Olivia Bennett
+                </x-slot:name>
+                <x-slot:roles>
+                    UI/UX Designer
+                </x-slot:roles>
+                <x-slot:content>
+                    Designs intuitive and engaging user experiences with a strong focus on usability and modern
+                    aesthetics.
+                </x-slot:content>
+            </x-member-card>
+
+            <x-member-card>
+                <x-slot:profile>
+                    <img class="rounded-base" src="https://i.pravatar.cc/300?img=7" alt="" />
+                </x-slot:profile>
+                <x-slot:name>
+                    Liam Anderson
+                </x-slot:name>
+                <x-slot:roles>
+                    Frontend Developer
+                </x-slot:roles>
+                <x-slot:content>
+                    Creates responsive and interactive interfaces using React, Tailwind CSS, and modern web
+                    technologies.
+                </x-slot:content>
+            </x-member-card>
+
+            <x-member-card>
+                <x-slot:profile>
+                    <img class="rounded-base" src="https://i.pravatar.cc/300?img=7" alt="" />
+                </x-slot:profile>
+                <x-slot:name>
+                    Sophia Turner
+                </x-slot:name>
+                <x-slot:roles>
+                    Digital Marketing Specialist
+                </x-slot:roles>
+                <x-slot:content>
+                    Drives growth through data-driven marketing strategies, SEO optimization, and social media
+                    campaigns.
+                </x-slot:content>
+            </x-member-card>
+
+            <x-member-card>
+                <x-slot:profile>
+                    <img class="rounded-base" src="https://i.pravatar.cc/300?img=7" alt="" />
+                </x-slot:profile>
+                <x-slot:name>
+                    Noah Mitchell
+                </x-slot:name>
+                <x-slot:roles>
+                    DevOps Engineer
+                </x-slot:roles>
+                <x-slot:content>
+                    Ensures reliable deployments and infrastructure with CI/CD pipelines, Docker, and cloud services.
+                </x-slot:content>
+            </x-member-card>
+
+            <x-member-card>
+                <x-slot:profile>
+                    <img class="rounded-base" src="https://i.pravatar.cc/300?img=7" alt="" />
+                </x-slot:profile>
+                <x-slot:name>
+                    Ava Richardson
+                </x-slot:name>
+                <x-slot:roles>
+                    Project Manager
+                </x-slot:roles>
+                <x-slot:content>
+                    Leads cross-functional teams using Agile methodologies to deliver high-quality products on time.
+                </x-slot:content>
+            </x-member-card>
+
+        </div>
+    </section>
+
+    <div class="border-t border-gray-200"></div>
+
+    <section id="contactUs" class="min-h-screen w-full px-6 flex flex-col items-center justify-center py-20">
+        <h2 class="font-bold text-3xl md:text-4xl text-center mb-10 md:mb-16">Contact Us</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 w-full">
+            <div class="md:col-span-1 md:col-start-2">
+                <label for="name" class="font-semibold">Name</label>
+                <input type="text" name="name" id="name"
+                    class="w-full bg-gray-50 border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-1 focus:ring-gray-900 focus:border-gray-900 ring-gray-900">
+            </div>
+            <div class="md:col-span-1 md:col-start-2">
+                <label for="email" class="font-semibold">Email</label>
+                <input type="email" name="email" id="email"
+                    class="w-full bg-gray-50 border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-1 focus:ring-gray-900 focus:border-gray-900 ring-gray-900">
+            </div>
+            <div class="md:col-span-1 md:col-start-2">
+                <label for="phone" class="font-semibold">Phone</label>
+                <input type="text" name="phone" id="phone"
+                    class="w-full bg-gray-50 border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-1 focus:ring-gray-900 focus:border-gray-900 ring-gray-900">
+            </div>
+            <div class="md:col-span-1 md:col-start-2">
+                <label for="address" class="font-semibold">Address</label>
+                <textarea name="address" id="address" cols="30" rows="10"
+                    class="w-full bg-gray-50 border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-1 focus:ring-gray-900 focus:border-gray-900 ring-gray-900"></textarea>
+            </div>
+            <div class="md:col-span-1 md:col-start-2">
+                <label for="description" class="font-semibold">Description</label>
+                <textarea name="description" id="description" cols="30" rows="10"
+                    class="w-full bg-gray-50 border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-1 focus:ring-gray-900 focus:border-gray-900 ring-gray-900"></textarea>
+            </div>
+            <div class="md:col-span-1 md:col-start-2">
+                <button type="button"
+                    class="text-white px-3 py-2 bg-[#fd9a00] hover:bg-amber-600 rounded font-semibold">Submit</button>
+            </div>
     </section>
 
 </x-layouts.app>
