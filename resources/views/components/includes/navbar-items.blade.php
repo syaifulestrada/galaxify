@@ -1,22 +1,48 @@
 @props([
-    'route' => 'home',
-    'navItemName' => '',
+    'route' => null,
+    'navItemName' => null,
+    'items' => null,
 ])
 
 @php
-    $navActive = fn($route) => request()->routeIs($route)
-        ? 'bg-[#fd9a00] text-white md:bg-transparent md:text-amber-500 font-semibold'
-        : 'hover:bg-[#fd9a00] hover:text-white md:hover:bg-transparent md:hover:text-amber-900';
+    $items =
+        $items ??
+        (filled($route) && filled($navItemName)
+            ? [['type' => 'route', 'route' => $route, 'href' => route($route), 'label' => $navItemName]]
+            : [['type' => 'url', 'href' => route('home'), 'label' => 'Home']]);
+
+    $itemClasses =
+        'block py-2 px-3 rounded md:p-0 text-black dark:text-gray-100 hover:bg-[#fd9a00] hover:text-white md:hover:bg-transparent md:hover:text-amber-500 dark:hover:text-amber-400';
 @endphp
 
 <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
     <ul
-        class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-neutral-200 rounded-base bg-neutral-secondary-strong rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-neutral-primary space-y-2 md:space-y-0 md:space-x-8 ">
-        <li>
-            <a href="{{ route($route) }}" class="block py-2 px-3 rounded text-black  md:p-0  {{ $navActive($route) }}">
-                {{ $navItemName }}
-            </a>
-        </li>
+        class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-neutral-200 rounded-base bg-neutral-secondary-strong rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-neutral-primary space-y-2 md:space-y-0 md:space-x-8 dark:border-neutral-800 dark:bg-neutral-900">
+        @foreach ($items as $item)
+            @php
+                $href = $item['href'] ?? '#';
+                $label = $item['label'] ?? '';
+
+                $isActive = false;
+                if (($item['type'] ?? null) === 'route') {
+                    $isActive = filled($item['route'] ?? null) && request()->routeIs($item['route']);
+                }
+
+                $activeClasses = $isActive
+                    ? '  bg-amber-500 text-white
+                         md:bg-transparent md:text-amber-500
+                         dark:bg-amber-500 dark:text-white
+                         md:dark:bg-transparent md:dark:text-amber-500
+                         font-semibold'
+                    : '';
+            @endphp
+
+            <li>
+                <a href="{{ $href }}" class="{{ $itemClasses }} {{ $activeClasses }}">
+                    {{ $label }}
+                </a>
+            </li>
+        @endforeach
 
     </ul>
 </div>

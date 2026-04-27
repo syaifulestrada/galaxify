@@ -1,4 +1,4 @@
-<div class="bg-neutral-primary-soft block max-w-sm p-6 border border-default rounded-base shadow-xs">
+<div class="bg-neutral-primary-soft block max-w-sm p-6 border border-default rounded-base shadow-xs dark:bg-neutral-900/60 dark:border-neutral-800">
     @if (isset($profile))
         <div>
             {{ $profile }}
@@ -7,20 +7,20 @@
 
     @if (isset($name))
         <div>
-            <h5 class="mt-6 mb-2 text-2xl font-semibold tracking-tight text-heading">{{ $name }}</h5>
+            <h5 class="mt-6 mb-2 text-2xl font-semibold tracking-tight text-heading dark:text-gray-50">{{ $name }}</h5>
         </div>
     @endif
 
     @if (isset($roles))
-        <p class="mb-6 text-sm">{{ $roles }}</p>
+        <p class="mb-6 text-sm text-gray-700 dark:text-gray-300">{{ $roles }}</p>
     @endif
 
     @if (isset($content))
-        <p class="mb-6 text-body">{{ $content }}</p>
+        <p class="mb-6 text-body dark:text-gray-300">{{ $content }}</p>
     @endif
 
     <a href="#"
-        class="inline-flex items-center text-body bg-neutral-secondary-medium box-border border border-default-medium hover:bg-neutral-tertiary-medium hover:text-heading focus:ring-4 focus:ring-neutral-tertiary shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none">
+        class="inline-flex items-center text-body bg-neutral-secondary-medium box-border border border-default-medium hover:bg-neutral-tertiary-medium hover:text-heading focus:ring-4 focus:ring-neutral-tertiary shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-gray-200 dark:hover:bg-neutral-800 dark:hover:text-gray-50 dark:focus:ring-amber-500/30">
         Read more
         <svg class="w-4 h-4 ms-1.5 rtl:rotate-180 -me-0.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
             width="24" height="24" fill="none" viewBox="0 0 24 24">
