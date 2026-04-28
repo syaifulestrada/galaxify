@@ -9,3 +9,5 @@ Route::get('/', function () {
 Route::get('/about', function () {
     return view('about');
 })->name('about');
+
+Route::view('/services', 'services.index')->name('services');

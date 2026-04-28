@@ -167,7 +167,7 @@
         </div>
 
         <div class="mt-10">
-            <a href="/"
+            <a href="/services"
                 class="inline-flex items-center gap-2 text-[#fd9a00] border border-[#fd9a00] hover:bg-[#fd9a00] hover:text-white font-semibold px-6 py-3 rounded-lg transition">
                 More Services
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"

@@ -18,7 +18,7 @@
 </head>
 
 <script>
-    (function () {
+    (function() {
         try {
             var theme = localStorage.getItem('theme');
             if (theme === 'dark' || theme === 'light') {
@@ -49,7 +49,10 @@
                     ['type' => 'url', 'href' => '#contactUs', 'label' => 'Contact'],
                 ]" />
             @else
-                <x-includes.navbar-items route="home" navItemName="Home" />
+                <x-includes.navbar-items :items="[
+                    ['type' => 'route', 'route' => 'home', 'href' => route('home'), 'label' => 'Home'],
+                    ['type' => 'route', 'route' => 'services', 'href' => route('services'), 'label' => 'Services'],
+                ]" />
             @endif
         </x-slot:menu-items>
     </x-includes.navbar>
