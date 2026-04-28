@@ -35,7 +35,8 @@
                 </a>
             </div>
 
-            <div class="flex items-center justify-center md:justify-start gap-6 md:gap-8 pt-4 border-t border-gray-100 dark:border-neutral-800">
+            <div
+                class="flex items-center justify-center md:justify-start gap-6 md:gap-8 pt-4 border-t border-gray-100 dark:border-neutral-800">
                 <div>
                     <p class="text-2xl md:text-3xl font-extrabold text-gray-900 dark:text-gray-50">50+</p>
                     <p class="text-xs md:text-sm text-gray-500 dark:text-gray-300">Projects Done</p>
@@ -61,23 +62,28 @@
 
     <div class="border-t border-gray-200 dark:border-neutral-800"></div>
 
-    <section id="aboutUs" class="min-h-screen bg-gray-50 dark:bg-neutral-950 w-full px-6 flex flex-col items-center justify-center py-20">
-        <h2 class="font-bold text-3xl md:text-4xl text-center mb-10 md:mb-16 text-gray-900 dark:text-gray-50">About Us</h2>
+    <section id="aboutUs"
+        class="min-h-screen bg-gray-50 dark:bg-neutral-950 w-full px-6 flex flex-col items-center justify-center py-20">
+        <h2 class="font-bold text-3xl md:text-4xl text-center mb-10 md:mb-16 text-gray-900 dark:text-gray-50">About Us
+        </h2>
         <div class="space-y-4">
-            <p class="text-gray-500 dark:text-gray-300 text-sm md:text-base max-w-3xl mx-auto text-center leading-relaxed">
+            <p
+                class="text-gray-500 dark:text-gray-300 text-sm md:text-base max-w-3xl mx-auto text-center leading-relaxed">
                 We are a digital team dedicated to helping small and medium-sized businesses grow
                 through modern and high-performing websites. In today's fast-moving digital landscape,
                 having a strong online presence is no longer optional — it's essential. That's why we focus
                 on building websites that are not only visually appealing, but also fast, responsive,
                 and designed to convert visitors into customers.
             </p>
-            <p class="text-gray-500 dark:text-gray-300 text-sm md:text-base max-w-3xl mx-auto text-center leading-relaxed">
+            <p
+                class="text-gray-500 dark:text-gray-300 text-sm md:text-base max-w-3xl mx-auto text-center leading-relaxed">
                 Our approach combines clean design, reliable technology, and a deep understanding of user
                 behavior. We believe that every business deserves a website that reflects its true value,
                 builds credibility, and supports long-term growth. Whether you are a startup looking to
                 establish your presence or a growing company aiming to scale, we are here to help you move forward.
             </p>
-            <p class="text-gray-500 dark:text-gray-300 text-sm md:text-base max-w-3xl mx-auto text-center leading-relaxed">
+            <p
+                class="text-gray-500 dark:text-gray-300 text-sm md:text-base max-w-3xl mx-auto text-center leading-relaxed">
                 We don't just build websites — we build digital foundations for your business success.
             </p>
         </div>
@@ -86,7 +92,8 @@
     <div class="border-t border-gray-200 dark:border-neutral-800"></div>
 
     <section id="services" class="min-h-screen w-full px-6 flex flex-col items-center justify-center py-20">
-        <h2 class="font-bold text-3xl md:text-4xl text-center mb-10 md:mb-16 text-gray-900 dark:text-gray-50">Services</h2>
+        <h2 class="font-bold text-3xl md:text-4xl text-center mb-10 md:mb-16 text-gray-900 dark:text-gray-50">Services
+        </h2>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl">
 
@@ -175,7 +182,8 @@
     <div class="border-t border-gray-200 dark:border-neutral-800"></div>
 
     <section id="projects" class="min-h-screen w-full px-6 flex flex-col items-center justify-center py-20">
-        <h2 class="font-bold text-3xl md:text-4xl text-center mb-10 md:mb-16 text-gray-900 dark:text-gray-50">Projects</h2>
+        <h2 class="font-bold text-3xl md:text-4xl text-center mb-10 md:mb-16 text-gray-900 dark:text-gray-50">Projects
+        </h2>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-4xl">
 
@@ -283,7 +291,8 @@
     <div class="border-t border-gray-200 dark:border-neutral-800"></div>
 
     <section id="member" class="min-h-screen w-full px-6 flex flex-col items-center justify-center py-20">
-        <h2 class="font-bold text-3xl md:text-4xl text-center mb-10 md:mb-16 text-gray-900 dark:text-gray-50">Member</h2>
+        <h2 class="font-bold text-3xl md:text-4xl text-center mb-10 md:mb-16 text-gray-900 dark:text-gray-50">Member
+        </h2>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-4xl">
 
@@ -387,33 +396,34 @@
     <div class="border-t border-gray-200 dark:border-neutral-800"></div>
 
     <section id="contactUs" class="min-h-screen w-full px-6 flex flex-col items-center justify-center py-20">
-        <h2 class="font-bold text-3xl md:text-4xl text-center mb-10 md:mb-16 text-gray-900 dark:text-gray-50">Contact Us</h2>
+        <h2 class="font-bold text-3xl md:text-4xl text-center mb-10 md:mb-16 text-gray-900 dark:text-gray-50">Contact
+            Us</h2>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 w-full">
             <div class="md:col-span-1 md:col-start-2">
                 <label for="name" class="font-semibold text-gray-900 dark:text-gray-100">Name</label>
                 <input type="text" name="name" id="name"
-                    class="w-full bg-gray-50 dark:bg-neutral-900 border border-gray-300 dark:border-neutral-700 rounded px-3 py-2 text-gray-900 dark:text-gray-100 placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:outline-none focus:ring-1 focus:ring-gray-900 dark:focus:ring-amber-500 focus:border-gray-900 dark:focus:border-amber-500 ring-gray-900">
+                    class="w-full bg-gray-50 dark:bg-neutral-900 border border-gray-300 dark:border-neutral-700 rounded px-3 py-2 text-gray-900 dark:text-gray-100 placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:outline-none focus:ring-1 focus:ring-amber-500 dark:focus:ring-amber-500 focus:border-amber-500 dark:focus:border-amber-500 ring-amber-500">
             </div>
             <div class="md:col-span-1 md:col-start-2">
                 <label for="email" class="font-semibold text-gray-900 dark:text-gray-100">Email</label>
                 <input type="email" name="email" id="email"
-                    class="w-full bg-gray-50 dark:bg-neutral-900 border border-gray-300 dark:border-neutral-700 rounded px-3 py-2 text-gray-900 dark:text-gray-100 placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:outline-none focus:ring-1 focus:ring-gray-900 dark:focus:ring-amber-500 focus:border-gray-900 dark:focus:border-amber-500 ring-gray-900">
+                    class="w-full bg-gray-50 dark:bg-neutral-900 border border-gray-300 dark:border-neutral-700 rounded px-3 py-2 text-gray-900 dark:text-gray-100 placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:outline-none focus:ring-1 focus:ring-amber-500 dark:focus:ring-amber-500 focus:border-amber-500 dark:focus:border-amber-500 ring-amber-500">
             </div>
             <div class="md:col-span-1 md:col-start-2">
                 <label for="phone" class="font-semibold text-gray-900 dark:text-gray-100">Phone</label>
                 <input type="text" name="phone" id="phone"
-                    class="w-full bg-gray-50 dark:bg-neutral-900 border border-gray-300 dark:border-neutral-700 rounded px-3 py-2 text-gray-900 dark:text-gray-100 placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:outline-none focus:ring-1 focus:ring-gray-900 dark:focus:ring-amber-500 focus:border-gray-900 dark:focus:border-amber-500 ring-gray-900">
+                    class="w-full bg-gray-50 dark:bg-neutral-900 border border-gray-300 dark:border-neutral-700 rounded px-3 py-2 text-gray-900 dark:text-gray-100 placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:outline-none focus:ring-1 focus:ring-amber-500 dark:focus:ring-amber-500 focus:border-amber-500 dark:focus:border-amber-500 ring-amber-500">
             </div>
             <div class="md:col-span-1 md:col-start-2">
                 <label for="address" class="font-semibold text-gray-900 dark:text-gray-100">Address</label>
                 <textarea name="address" id="address" cols="30" rows="10"
-                    class="w-full bg-gray-50 dark:bg-neutral-900 border border-gray-300 dark:border-neutral-700 rounded px-3 py-2 text-gray-900 dark:text-gray-100 placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:outline-none focus:ring-1 focus:ring-gray-900 dark:focus:ring-amber-500 focus:border-gray-900 dark:focus:border-amber-500 ring-gray-900"></textarea>
+                    class="w-full bg-gray-50 dark:bg-neutral-900 border border-gray-300 dark:border-neutral-700 rounded px-3 py-2 text-gray-900 dark:text-gray-100 placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:outline-none focus:ring-1 focus:ring-amber-500 dark:focus:ring-amber-500 focus:border-amber-500 dark:focus:border-amber-500 ring-amber-500"></textarea>
             </div>
             <div class="md:col-span-1 md:col-start-2">
                 <label for="description" class="font-semibold text-gray-900 dark:text-gray-100">Description</label>
                 <textarea name="description" id="description" cols="30" rows="10"
-                    class="w-full bg-gray-50 dark:bg-neutral-900 border border-gray-300 dark:border-neutral-700 rounded px-3 py-2 text-gray-900 dark:text-gray-100 placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:outline-none focus:ring-1 focus:ring-gray-900 dark:focus:ring-amber-500 focus:border-gray-900 dark:focus:border-amber-500 ring-gray-900"></textarea>
+                    class="w-full bg-gray-50 dark:bg-neutral-900 border border-gray-300 dark:border-neutral-700 rounded px-3 py-2 text-gray-900 dark:text-gray-100 placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:outline-none focus:ring-1 focus:ring-amber-500  dark:focus:ring-amber-500 focus:border-amber-500 dark:focus:border-amber-500"></textarea>
             </div>
             <div class="md:col-span-1 md:col-start-2">
                 <button type="button"

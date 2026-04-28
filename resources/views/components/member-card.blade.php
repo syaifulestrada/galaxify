@@ -1,4 +1,5 @@
-<div class="bg-neutral-primary-soft block max-w-sm p-6 border border-default rounded-base shadow-xs dark:bg-neutral-900/60 dark:border-neutral-800">
+<div
+    class="bg-neutral-primary-soft block max-w-sm p-6 border border-default rounded-base shadow-xs dark:bg-neutral-900/60 dark:border-neutral-800">
     @if (isset($profile))
         <div>
             {{ $profile }}
@@ -7,7 +8,8 @@
 
     @if (isset($name))
         <div>
-            <h5 class="mt-6 mb-2 text-2xl font-semibold tracking-tight text-heading dark:text-gray-50">{{ $name }}</h5>
+            <h5 class="mt-6 mb-2 text-2xl font-semibold tracking-tight text-heading dark:text-gray-50">
+                {{ $name }}</h5>
         </div>
     @endif
 
