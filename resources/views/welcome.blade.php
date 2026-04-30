@@ -1,4 +1,4 @@
-<x-layouts.app subTitle="Home">
+<x-layouts.app>
 
     <section id="hero"
         class="min-h-screen max-w-7xl mx-auto px-6 pt-20 flex flex-col md:flex-row items-center justify-center md:justify-between gap-10">
@@ -64,28 +64,24 @@
 
     <section id="aboutUs"
         class="min-h-screen bg-gray-50 dark:bg-neutral-950 w-full px-6 flex flex-col items-center justify-center py-20">
-        <h2 class="font-bold text-3xl md:text-4xl text-center mb-10 md:mb-16 text-gray-900 dark:text-gray-50">About Us
+        <h2 class="font-bold text-3xl md:text-4xl text-center mb-10  text-gray-900 dark:text-gray-50">About Us
         </h2>
-        <div class="space-y-4">
+        <div class="max-w-4xl">
             <p
-                class="text-gray-500 dark:text-gray-300 text-sm md:text-base max-w-3xl mx-auto text-center leading-relaxed">
-                We are a digital team dedicated to helping small and medium-sized businesses grow
-                through modern and high-performing websites. In today's fast-moving digital landscape,
-                having a strong online presence is no longer optional — it's essential. That's why we focus
-                on building websites that are not only visually appealing, but also fast, responsive,
-                and designed to convert visitors into customers.
+                class="text-gray-500 dark:text-gray-300 text-sm md:text-base text-center leading-relaxed whitespace-pre-line">
+                {{ $aboutUs->about }}
             </p>
-            <p
-                class="text-gray-500 dark:text-gray-300 text-sm md:text-base max-w-3xl mx-auto text-center leading-relaxed">
-                Our approach combines clean design, reliable technology, and a deep understanding of user
-                behavior. We believe that every business deserves a website that reflects its true value,
-                builds credibility, and supports long-term growth. Whether you are a startup looking to
-                establish your presence or a growing company aiming to scale, we are here to help you move forward.
-            </p>
-            <p
-                class="text-gray-500 dark:text-gray-300 text-sm md:text-base max-w-3xl mx-auto text-center leading-relaxed">
-                We don't just build websites — we build digital foundations for your business success.
-            </p>
+            <div class="mt-10 flex items-center justify-center">
+                <a href="/"
+                    class="inline-flex items-center gap-2 text-[#fd9a00] border border-[#fd9a00] hover:bg-[#fd9a00] hover:text-white font-semibold px-6 py-3 rounded-lg transition">
+                    Learn More
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </a>
+            </div>
         </div>
     </section>
 
