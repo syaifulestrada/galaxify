@@ -9,4 +9,5 @@ Route::get('/', function () {
 
 Route::controller(ServiceController::class)->group(function () {
     Route::get('/services', 'index')->name('services');
+    Route::get('/services/{slug}', 'show')->name('services.show');
 });

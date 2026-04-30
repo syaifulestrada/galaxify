@@ -27,7 +27,7 @@
 
                 if (($item['type'] ?? null) === 'route') {
                     $href = route($item['route']);
-                    $isActive = filled($item['route'] ?? null) && request()->routeIs($item['route']);
+                    $isActive = filled($item['route'] ?? null) && request()->routeIs($item['route'] . '*');
                 } elseif (($item['type'] ?? null) === 'url') {
                     $href = $item['href'] ?? '#';
                 }
