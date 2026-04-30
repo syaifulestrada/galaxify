@@ -10,11 +10,14 @@ enum NavigationGroup implements HasLabel
 
     case ContentManagement;
 
+    case Website;
+
     public function getLabel(): string
     {
         return match ($this) {
             self::UserManagement => __('User Management'),
             self::ContentManagement => __('Content Management'),
+            self::Website => __('Website')
         };
     }
 }
