@@ -8,11 +8,11 @@
     $items =
         $items ??
         (filled($route) && filled($navItemName)
-            ? [['type' => 'route', 'route' => $route, 'href' => route($route), 'label' => $navItemName]]
-            : [['type' => 'url', 'href' => route('home'), 'label' => 'Home']]);
+            ? [['type' => 'route', 'route' => $route, 'label' => $navItemName]]
+            : [['type' => 'route', 'route' => 'home', 'label' => 'Home']]);
 
     $itemClasses =
-        'block py-2 px-3 rounded md:p-0 text-black dark:text-gray-100 hover:bg-[#fd9a00] hover:text-white md:hover:bg-transparent md:hover:text-amber-500 dark:hover:text-amber-400';
+        'block py-2 px-3 rounded md:p-0 text-black dark:text-gray-100 hover:bg-[#fd9a00] hover:text-white md:hover:bg-transparent md:hover:text-amber-500 dark:hover:text-white md:dark:hover:text-amber-500';
 @endphp
 
 <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
@@ -20,12 +20,16 @@
         class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-neutral-200 rounded-base bg-neutral-secondary-strong rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-neutral-primary space-y-2 md:space-y-0 md:space-x-8 dark:border-neutral-800 dark:bg-neutral-900">
         @foreach ($items as $item)
             @php
-                $href = $item['href'] ?? '#';
+                $href = '#';
                 $label = $item['label'] ?? '';
 
                 $isActive = false;
+
                 if (($item['type'] ?? null) === 'route') {
+                    $href = route($item['route']);
                     $isActive = filled($item['route'] ?? null) && request()->routeIs($item['route']);
+                } elseif (($item['type'] ?? null) === 'url') {
+                    $href = $item['href'] ?? '#';
                 }
 
                 $activeClasses = $isActive

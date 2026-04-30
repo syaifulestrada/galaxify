@@ -39,14 +39,7 @@
 
     <x-includes.navbar>
         <x-slot:menu-items>
-            <x-includes.navbar-items :items="[
-                ['type' => 'route', 'route' => 'home', 'href' => route('home'), 'label' => 'Home'],
-                ['type' => 'url', 'href' => '#aboutUs', 'label' => 'About Us'],
-                ['type' => 'route', 'route' => 'services', 'href' => route('services'), 'label' => 'Services'],
-                ['type' => 'url', 'href' => '#projects', 'label' => 'Projects'],
-                ['type' => 'url', 'href' => '#member', 'label' => 'Member'],
-                ['type' => 'url', 'href' => '#contactUs', 'label' => 'Contact'],
-            ]" />
+            <x-includes.navbar-items :items="config('navbar')" />
         </x-slot:menu-items>
     </x-includes.navbar>
 
