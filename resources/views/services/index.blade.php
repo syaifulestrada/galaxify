@@ -1,4 +1,4 @@
-<x-layouts.app subTitle="Services">
+<x-layouts.app :subTitle="$subtitle">
     <main class="min-h-screen flex flex-col w-full items-center justify-center">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full px-10 py-10">
             <x-service-card link="/">

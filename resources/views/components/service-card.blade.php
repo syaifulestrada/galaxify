@@ -1,17 +1,14 @@
 @props(['link' => null])
 
-<div class="bg-neutral-primary-soft p-6 border border-default rounded-base shadow-xs dark:bg-neutral-900/60 dark:border-neutral-800">
+<div
+    class="bg-neutral-primary-soft p-6 border border-default rounded-base shadow-xs dark:bg-neutral-900/60 dark:border-neutral-800">
 
     @if (isset($icon))
-        <a href="{{ $link }}">
-            {{ $icon }}
-        </a>
+        {{ $icon }}
     @endif
 
     @if (isset($title))
-        <a href="{{ $link }}">
-            <h5 class="mb-2 text-xl font-semibold tracking-tight text-heading dark:text-gray-50">{{ $title }}</h5>
-        </a>
+        <h5 class="mb-2 text-xl font-semibold tracking-tight text-heading dark:text-gray-50">{{ $title }}</h5>
     @endif
 
     @if (isset($content))
