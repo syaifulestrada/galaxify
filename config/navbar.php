@@ -4,12 +4,13 @@ return [
     [
         'type' => 'route',
         'route' => 'home',
-        'href' => 'route',
+        'href' => 'home',
         'label' => 'Home',
     ],
     [
-        'type' => 'url',
-        'href' => '#aboutUs',
+        'type' => 'route',
+        'route' => 'aboutus',
+        'href' => 'aboutus',
         'label' => 'About Us',
     ],
     [
