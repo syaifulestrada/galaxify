@@ -128,90 +128,21 @@
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-4xl">
 
-            <x-project-card>
-                <x-slot:cover>
-                    <img class="rounded-base" src="{{ asset('projects/1.webp') }}" alt="Company Website" />
-                </x-slot:cover>
+            @foreach ($projects as $project)
+                <x-project-card>
+                    <x-slot:cover>
+                        <img class="rounded-base" src="{{ asset($project->cover) }}" alt="Company Website" />
+                    </x-slot:cover>
 
-                <x-slot:title>
-                    Corporate Website
-                </x-slot:title>
+                    <x-slot:title>
+                        {{ $project->title }}
+                    </x-slot:title>
 
-                <x-slot:content>
-                    A modern and responsive corporate website designed to strengthen brand identity and online presence.
-                </x-slot:content>
-            </x-project-card>
-
-            <x-project-card>
-                <x-slot:cover>
-                    <img class="rounded-base" src="{{ asset('projects/1.webp') }}" alt="E-Commerce Platform" />
-                </x-slot:cover>
-
-                <x-slot:title>
-                    E-Commerce Platform
-                </x-slot:title>
-
-                <x-slot:content>
-                    A full-featured online store with seamless shopping experience, payment integration, and admin
-                    dashboard.
-                </x-slot:content>
-            </x-project-card>
-
-            <x-project-card>
-                <x-slot:cover>
-                    <img class="rounded-base" src="{{ asset('projects/1.webp') }}" alt="Portfolio Website" />
-                </x-slot:cover>
-
-                <x-slot:title>
-                    Portfolio Website
-                </x-slot:title>
-
-                <x-slot:content>
-                    A personal portfolio website to showcase projects, skills, and professional experience.
-                </x-slot:content>
-            </x-project-card>
-
-            <x-project-card>
-                <x-slot:cover>
-                    <img class="rounded-base" src="{{ asset('projects/1.webp') }}" alt="Landing Page" />
-                </x-slot:cover>
-
-                <x-slot:title>
-                    Product Landing Page
-                </x-slot:title>
-
-                <x-slot:content>
-                    A high-converting landing page focused on promoting digital products with engaging design.
-                </x-slot:content>
-            </x-project-card>
-
-            <x-project-card>
-                <x-slot:cover>
-                    <img class="rounded-base" src="{{ asset('projects/1.webp') }}" alt="Blog Platform" />
-                </x-slot:cover>
-
-                <x-slot:title>
-                    Blog Platform
-                </x-slot:title>
-
-                <x-slot:content>
-                    A content management system for publishing articles with categories, comments, and easy navigation.
-                </x-slot:content>
-            </x-project-card>
-
-            <x-project-card>
-                <x-slot:cover>
-                    <img class="rounded-base" src="{{ asset('projects/1.webp') }}" alt="Admin Dashboard" />
-                </x-slot:cover>
-
-                <x-slot:title>
-                    Admin Dashboard
-                </x-slot:title>
-
-                <x-slot:content>
-                    An interactive dashboard for managing data, users, and analytics in a clean interface.
-                </x-slot:content>
-            </x-project-card>
+                    <x-slot:content>
+                        {{ $project->content }}
+                    </x-slot:content>
+                </x-project-card>
+            @endforeach
 
 
         </div>
