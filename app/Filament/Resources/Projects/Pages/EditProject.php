@@ -38,7 +38,7 @@ class EditProject extends EditRecord
 
         $cover = storage_path('app/public/'.$newCover);
 
-        $image = ImageManager::usingDriver(Driver::class)->decode($cover)->scaleDown(600);
+        $image = ImageManager::usingDriver(Driver::class)->decode($cover);
 
         $encoded = $image->encodeUsingFormat(Format::WEBP);
 

@@ -17,7 +17,7 @@ class CreateProject extends CreateRecord
     {
         $cover = storage_path('app/public/'.$data['cover']);
 
-        $image = ImageManager::usingDriver(Driver::class)->decode($cover)->scaleDown(600);
+        $image = ImageManager::usingDriver(Driver::class)->decode($cover);
         $encoded = $image->encodeUsingFormat(Format::WEBP);
 
         $newPath = 'projects/'.pathinfo($data['cover'], PATHINFO_FILENAME).'.webp';
