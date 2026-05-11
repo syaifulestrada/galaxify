@@ -20,9 +20,10 @@ return [
         'label' => 'Services',
     ],
     [
-        'type' => 'url',
-        'href' => '#projects',
-        'label' => 'Projects',
+        'type' => 'route',
+        'route' => 'projects',
+        'href' => 'projects',
+        'label' => 'projects',
     ],
     [
         'type' => 'url',
