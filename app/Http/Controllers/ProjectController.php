@@ -18,11 +18,11 @@ class ProjectController extends Controller
 
     public function show(string $slug)
     {
-        $projects = Project::where('slug', $slug)->firstOrFail();
+        $project = Project::where('slug', $slug)->firstOrFail();
 
         return view('projects.show', [
             'subtitle' => 'Projects Details',
-            'projects' => $projects,
+            'project' => $project,
         ]);
     }
 }

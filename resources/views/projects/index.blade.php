@@ -13,7 +13,7 @@
                     </x-slot:title>
 
                     <x-slot:content>
-                        {{ $project->content }}
+                        {{ Str::words($project->content, 20) }}
                     </x-slot:content>
                 </x-project-card>
             @empty

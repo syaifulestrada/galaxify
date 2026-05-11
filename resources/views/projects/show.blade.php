@@ -12,11 +12,11 @@
                 class="bg-neutral-primary-soft border border-default rounded-base p-8 dark:bg-neutral-900/60 dark:border-neutral-800">
 
                 <h1 class="text-3xl font-semibold text-heading dark:text-gray-50 mb-6">
-                    {{ $projects->title }}
+                    {{ $project->title }}
                 </h1>
 
                 <div class="mb-6">
-                    <img src="{{ asset($projects->cover) }}" class="rounded">
+                    <img src="{{ asset($project->cover) }}" class="rounded ">
                 </div>
 
                 <hr class="border-default dark:border-neutral-700 mb-6" />
@@ -25,45 +25,60 @@
                     <div class="col-span-full">
                         <div class="text-body dark:text-neutral-100 font-semibold">Project Details</div>
                     </div>
-                    <div class="border border-default dark:border-neutral-700 rounded-sm p-3">
-                        <div class="text-body text-sm dark:text-neutral-100">Year</div>
+                    <div
+                        class="bg-neutral-primary-soft dark:bg-neutral-900/60 border border-default dark:border-neutral-800 rounded-base p-4 hover:border-amber-500 duration-200">
+                        <div class="text-xs text-body dark:text-neutral-400 mb-1">Year</div>
+                        <div class="font-semibold text-heading dark:text-gray-50 text-sm">
+                            {{ $project->year ?? '-' }}
+                        </div>
                     </div>
-                    <div class="border border-default dark:border-neutral-700 rounded-sm p-3">
-                        <div class="text-body text-sm dark:text-neutral-100">Category</div>
+                    <div
+                        class="bg-neutral-primary-soft dark:bg-neutral-900/60 border border-default dark:border-neutral-800 rounded-base p-4 hover:border-amber-500 duration-200">
+                        <div class="text-xs text-body dark:text-neutral-400 mb-1">Category</div>
+                        <div class="font-semibold text-heading dark:text-gray-50 text-sm">
+                            {{ $project->category ?? '-' }}
+                        </div>
                     </div>
-                    <div class="border border-default dark:border-neutral-700 rounded-sm p-3">
-                        <div class="text-body text-sm dark:text-neutral-100">Client</div>
+                    <div
+                        class="bg-neutral-primary-soft dark:bg-neutral-900/60 border border-default dark:border-neutral-800 rounded-base p-4 hover:border-amber-500 duration-200">
+                        <div class="text-xs text-body dark:text-neutral-400 mb-1">Client</div>
+                        <div class="font-semibold text-heading dark:text-gray-50 text-sm">
+                            {{ $project->client ?? '-' }}
+                        </div>
                     </div>
-                    <div class="border border-default dark:border-neutral-700 rounded-sm p-3">
-                        <div class="text-body text-sm dark:text-neutral-100">Duration</div>
+                    <div
+                        class="bg-neutral-primary-soft dark:bg-neutral-900/60 border border-default dark:border-neutral-800 rounded-base p-4 hover:border-amber-500 duration-200">
+                        <div class="text-xs text-body dark:text-neutral-400 mb-1">Duration</div>
+                        <div class="font-semibold text-heading dark:text-gray-50 text-sm">
+                            {{ $project->duration ?? '-' }}
+                        </div>
                     </div>
                 </div>
 
 
                 <hr class="border-default dark:border-neutral-700 mb-6" />
 
-                <div class="grid sm:grid-cols-1  lg:grid-cols-2 gap-x-2 gap-y-2 mb-6">
-                    <div class="col-span-full">
-                        <div class="text-body dark:text-neutral-100 font-semibold">Tech Stacks</div>
+                @if ($project->tech_stack)
+                    <div class="mb-8">
+                        <h2
+                            class="text-sm font-semibold text-body dark:text-neutral-400 uppercase tracking-widest mb-4">
+                            Tech Stack
+                        </h2>
+                        <div class="flex flex-wrap gap-2">
+                            @foreach ($project->tech_stack ?? [] as $tech)
+                                <span
+                                    class="px-3 py-1.5 text-sm rounded-full border border-default dark:border-neutral-700 text-body dark:text-neutral-300 bg-neutral-primary-soft dark:bg-neutral-900/60 hover:border-amber-500 duration-200">
+                                    {{ $tech }}
+                                </span>
+                            @endforeach
+                        </div>
                     </div>
-                    <div class="border border-default dark:border-neutral-700 rounded-sm p-3">
-                        <div class="text-body text-sm dark:text-neutral-100">Year</div>
-                    </div>
-                    <div class="border border-default dark:border-neutral-700 rounded-sm p-3">
-                        <div class="text-body text-sm dark:text-neutral-100">Category</div>
-                    </div>
-                    <div class="border border-default dark:border-neutral-700 rounded-sm p-3">
-                        <div class="text-body text-sm dark:text-neutral-100">Client</div>
-                    </div>
-                    <div class="border border-default dark:border-neutral-700 rounded-sm p-3">
-                        <div class="text-body text-sm dark:text-neutral-100">Duration</div>
-                    </div>
-                </div>
+                @endif
 
                 <hr class="border-default dark:border-neutral-700" />
 
                 <p class="text-body whitespace-pre-line text-[15px] leading-relaxed dark:text-gray-300">
-                    {{ $projects->content }}
+                    {{ $project->content }}
                 </p>
 
             </div>

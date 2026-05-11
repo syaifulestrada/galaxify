@@ -21,10 +21,6 @@
             </p>
 
             <div class="flex items-center justify-center md:justify-start gap-4">
-                <button type="button"
-                    class="text-white px-6 py-3 bg-[#fd9a00] hover:bg-amber-600 rounded-lg font-semibold text-base transition">
-                    Getting Started
-                </button>
                 <a href="#aboutUs"
                     class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-50 font-medium flex items-center gap-2 transition">
                     Learn More
@@ -107,18 +103,6 @@
                         {{ Str::words($service->content, 15) }}
                     </x-slot:content>
                 </x-service-card>
-
-                <div class="mt-10">
-                    <a href="/services"
-                        class="inline-flex items-center gap-2 text-[#fd9a00] border border-[#fd9a00] hover:bg-[#fd9a00] hover:text-white font-semibold px-6 py-3 rounded-lg transition">
-                        More Services
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                        </svg>
-                    </a>
-                </div>
             @empty
                 <div class="col-span-full text-center">
                     <div class="font-semibold">
@@ -127,6 +111,20 @@
                 </div>
             @endforelse
         </div>
+
+        @if ($services->isNotEmpty())
+            <div class="mt-10">
+                <a href="/services"
+                    class="inline-flex items-center gap-2 text-[#fd9a00] border border-[#fd9a00] hover:bg-[#fd9a00] hover:text-white font-semibold px-6 py-3 rounded-lg transition">
+                    More Services
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </a>
+            </div>
+        @endif
 
 
     </section>
@@ -140,7 +138,7 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-4xl">
 
             @forelse ($projects as $project)
-                <x-project-card>
+                <x-project-card link="{{ route('projects.show', $project->slug) }}">
                     <x-slot:cover>
                         <img class="rounded-base" src="{{ asset($project->cover) }}" alt="Company Website" />
                     </x-slot:cover>
@@ -150,10 +148,23 @@
                     </x-slot:title>
 
                     <x-slot:content>
-                        {{ $project->content }}
+                        {{ Str::words($project->content, 20) }}
                     </x-slot:content>
-                </x-project-card>
 
+                </x-project-card>
+            @empty
+                <div class="col-span-full text-center">
+                    <div class="font-semibold">
+                        No projects available.
+                    </div>
+                </div>
+            @endforelse
+
+
+        </div>
+
+        @if ($projects->isNotEmpty())
+            <div>
                 <div class="mt-10">
                     <a href="{{ route('projects') }}"
                         class="inline-flex items-center gap-2 text-[#fd9a00] border border-[#fd9a00] hover:bg-[#fd9a00] hover:text-white font-semibold px-6 py-3 rounded-lg transition">
@@ -165,15 +176,8 @@
                         </svg>
                     </a>
                 </div>
-            @empty
-                <div class="col-span-full text-center">
-                    <div class="font-semibold">
-                        No projects available.
-                    </div>
-                </div>
-            @endforelse
-
-        </div>
+            </div>
+        @endif
     </section>
 
     <div class="border-t border-gray-200 dark:border-neutral-800"></div>
