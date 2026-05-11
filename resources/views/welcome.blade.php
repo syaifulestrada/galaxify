@@ -128,7 +128,7 @@
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-4xl">
 
-            @foreach ($projects as $project)
+            @forelse ($projects as $project)
                 <x-project-card>
                     <x-slot:cover>
                         <img class="rounded-base" src="{{ asset($project->cover) }}" alt="Company Website" />
@@ -142,8 +142,13 @@
                         {{ $project->content }}
                     </x-slot:content>
                 </x-project-card>
-            @endforeach
-
+            @empty
+                <div class="col-span-full text-center">
+                    <div class="font-semibold">
+                        No services available.
+                    </div>
+                </div>
+            @endforelse
 
         </div>
 

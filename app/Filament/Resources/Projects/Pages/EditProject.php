@@ -46,6 +46,8 @@ class EditProject extends EditRecord
 
         Storage::disk('public')->put($newPath, $encoded);
 
+        Storage::disk('public')->delete($newCover);
+
         $data['cover'] = $newPath;
 
         return $data;

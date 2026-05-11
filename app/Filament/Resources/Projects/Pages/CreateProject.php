@@ -17,13 +17,13 @@ class CreateProject extends CreateRecord
     {
         $cover = storage_path('app/public/'.$data['cover']);
 
-        $image = ImageManager::usingDriver(Driver::class)->decode($cover);
-
+        $image = ImageManager::usingDriver(Driver::class)->decode($cover)->scaleDown(600);
         $encoded = $image->encodeUsingFormat(Format::WEBP);
 
         $newPath = 'projects/'.pathinfo($data['cover'], PATHINFO_FILENAME).'.webp';
-
         Storage::disk('public')->put($newPath, $encoded);
+
+        Storage::disk('public')->delete($data['cover']);
 
         $data['cover'] = $newPath;
 
