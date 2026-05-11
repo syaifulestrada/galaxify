@@ -67,21 +67,24 @@
         <h2 class="font-bold text-3xl md:text-4xl text-center mb-10  text-gray-900 dark:text-gray-50">About Us
         </h2>
         <div class="max-w-4xl">
-            <p
-                class="text-gray-500 dark:text-gray-300 text-sm md:text-base text-center leading-relaxed whitespace-pre-line">
-                {{ $aboutUs->about }}
-            </p>
-            <div class="mt-10 flex items-center justify-center">
-                <a href="{{ route('aboutus') }}"
-                    class="inline-flex items-center gap-2 text-[#fd9a00] border border-[#fd9a00] hover:bg-[#fd9a00] hover:text-white font-semibold px-6 py-3 rounded-lg transition">
-                    Learn More
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                </a>
-            </div>
+            @if ($aboutUs)
+                <p
+                    class="text-gray-500 dark:text-gray-300 text-sm md:text-base text-center leading-relaxed whitespace-pre-line">
+                    {{ $aboutUs->about }}
+                </p>
+
+                <div class="mt-10 flex items-center justify-center">
+                    <a href="{{ route('aboutus') }}"
+                        class="inline-flex items-center gap-2 text-[#fd9a00] border border-[#fd9a00] hover:bg-[#fd9a00] hover:text-white font-semibold px-6 py-3 rounded-lg transition">
+                        Learn More
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                    </a>
+                </div>
+            @endif
         </div>
     </section>
 
@@ -92,7 +95,7 @@
         </h2>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl">
-            @foreach ($services as $service)
+            @forelse ($services as $service)
                 <x-service-card link="{{ route('services.show', $service->slug) }}">
                     <x-slot:icon>
                         <x-filament::icon :icon="'heroicon-o-' . $service->icon" class="w-10 h-10 mb-4 text-[#fd9a00]" />
@@ -104,20 +107,28 @@
                         {{ Str::words($service->content, 15) }}
                     </x-slot:content>
                 </x-service-card>
-            @endforeach
+
+                <div class="mt-10">
+                    <a href="/services"
+                        class="inline-flex items-center gap-2 text-[#fd9a00] border border-[#fd9a00] hover:bg-[#fd9a00] hover:text-white font-semibold px-6 py-3 rounded-lg transition">
+                        More Services
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                    </a>
+                </div>
+            @empty
+                <div class="col-span-full text-center">
+                    <div class="font-semibold">
+                        No services available.
+                    </div>
+                </div>
+            @endforelse
         </div>
 
-        <div class="mt-10">
-            <a href="/services"
-                class="inline-flex items-center gap-2 text-[#fd9a00] border border-[#fd9a00] hover:bg-[#fd9a00] hover:text-white font-semibold px-6 py-3 rounded-lg transition">
-                More Services
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-            </a>
-        </div>
+
     </section>
 
     <div class="border-t border-gray-200 dark:border-neutral-800"></div>
@@ -142,26 +153,26 @@
                         {{ $project->content }}
                     </x-slot:content>
                 </x-project-card>
+
+                <div class="mt-10">
+                    <a href="{{ route('projects') }}"
+                        class="inline-flex items-center gap-2 text-[#fd9a00] border border-[#fd9a00] hover:bg-[#fd9a00] hover:text-white font-semibold px-6 py-3 rounded-lg transition">
+                        More Projects
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                    </a>
+                </div>
             @empty
                 <div class="col-span-full text-center">
                     <div class="font-semibold">
-                        No services available.
+                        No projects available.
                     </div>
                 </div>
             @endforelse
 
-        </div>
-
-        <div class="mt-10">
-            <a href="{{ route('projects') }}"
-                class="inline-flex items-center gap-2 text-[#fd9a00] border border-[#fd9a00] hover:bg-[#fd9a00] hover:text-white font-semibold px-6 py-3 rounded-lg transition">
-                More Projects
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-            </a>
         </div>
     </section>
 

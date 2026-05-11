@@ -21,4 +21,5 @@ Route::controller(ServiceController::class)->group(function () {
 
 Route::controller(ProjectController::class)->group(function () {
     Route::get('/projects', 'index')->name('projects');
+    Route::get('/projects/{slug}', 'show')->name('projects.show');
 });
