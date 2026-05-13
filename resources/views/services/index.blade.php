@@ -1,6 +1,6 @@
 <x-layouts.app :subTitle="$subtitle">
     <main class="min-h-screen flex flex-col w-full items-center justify-center">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full px-10 py-10">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 px-10 py-10">
             @forelse ($services as $service)
                 <x-service-card link="{{ route('services.show', $service->slug) }}">
                     <x-slot:icon>
