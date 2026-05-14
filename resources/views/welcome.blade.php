@@ -199,15 +199,33 @@
                         {{ implode(', ', $member->role) }}
                     </x-slot:roles>
                     <x-slot:content>
-                        {{ $member->description }}
+                        {{ Str::words($member->description, 20) }}
                     </x-slot:content>
                 </x-member-card>
             @empty
-                <div>No members.</div>
+                <div class="col-span-full text-center">
+                    <div class="font-semibold">
+                        No members available.
+                    </div>
+                </div>
             @endforelse
-
-
         </div>
+
+        @if ($members->isNotEmpty())
+            <div>
+                <div class="mt-10">
+                    <a href="{{ route('members') }}"
+                        class="inline-flex items-center gap-2 text-[#fd9a00] border border-[#fd9a00] hover:bg-[#fd9a00] hover:text-white font-semibold px-6 py-3 rounded-lg transition">
+                        More Members
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        @endif
     </section>
 
     <div class="border-t border-gray-200 dark:border-neutral-800"></div>
