@@ -26,9 +26,10 @@ return [
         'label' => 'projects',
     ],
     [
-        'type' => 'url',
-        'href' => '#member',
-        'label' => 'Member',
+        'type' => 'route',
+        'route' => 'members',
+        'href' => 'members',
+        'label' => 'members',
     ],
     [
         'type' => 'url',

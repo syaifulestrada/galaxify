@@ -11,7 +11,7 @@ class MemberController extends Controller
         $members = Member::get();
 
         return view('members.index', [
-            'subtitle' => 'members',
+            'subtitle' => 'Members',
             'members' => $members,
         ]);
     }
