@@ -183,104 +183,29 @@
     <div class="border-t border-gray-200 dark:border-neutral-800"></div>
 
     <section id="member" class="min-h-screen w-full px-6 flex flex-col items-center justify-center py-20">
-        <h2 class="font-bold text-3xl md:text-4xl text-center mb-10 md:mb-16 text-gray-900 dark:text-gray-50">Member
+        <h2 class="font-bold text-3xl md:text-4xl text-center mb-10 md:mb-16 text-gray-900 dark:text-gray-50">Members
         </h2>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-4xl">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-4xl items-stretch">
+            @forelse ($members as $member)
+                <x-member-card>
+                    <x-slot:profile>
+                        <img class="rounded-base w-36" src="{{ asset($member->cover) }}" alt="" />
+                    </x-slot:profile>
+                    <x-slot:name>
+                        {{ $member->name }}
+                    </x-slot:name>
+                    <x-slot:roles>
+                        {{ implode(', ', $member->role) }}
+                    </x-slot:roles>
+                    <x-slot:content>
+                        {{ $member->description }}
+                    </x-slot:content>
+                </x-member-card>
+            @empty
+                <div>No members.</div>
+            @endforelse
 
-            <x-member-card>
-                <x-slot:profile>
-                    <img class="rounded-base" src="https://i.pravatar.cc/300?img=7" alt="" />
-                </x-slot:profile>
-                <x-slot:name>
-                    Ethan Carter
-                </x-slot:name>
-                <x-slot:roles>
-                    Backend Engineer
-                </x-slot:roles>
-                <x-slot:content>
-                    Builds scalable APIs and robust backend systems using modern frameworks and clean architecture
-                    principles.
-                </x-slot:content>
-            </x-member-card>
-
-            <x-member-card>
-                <x-slot:profile>
-                    <img class="rounded-base" src="https://i.pravatar.cc/300?img=7" alt="" />
-                </x-slot:profile>
-                <x-slot:name>
-                    Olivia Bennett
-                </x-slot:name>
-                <x-slot:roles>
-                    UI/UX Designer
-                </x-slot:roles>
-                <x-slot:content>
-                    Designs intuitive and engaging user experiences with a strong focus on usability and modern
-                    aesthetics.
-                </x-slot:content>
-            </x-member-card>
-
-            <x-member-card>
-                <x-slot:profile>
-                    <img class="rounded-base" src="https://i.pravatar.cc/300?img=7" alt="" />
-                </x-slot:profile>
-                <x-slot:name>
-                    Liam Anderson
-                </x-slot:name>
-                <x-slot:roles>
-                    Frontend Developer
-                </x-slot:roles>
-                <x-slot:content>
-                    Creates responsive and interactive interfaces using React, Tailwind CSS, and modern web
-                    technologies.
-                </x-slot:content>
-            </x-member-card>
-
-            <x-member-card>
-                <x-slot:profile>
-                    <img class="rounded-base" src="https://i.pravatar.cc/300?img=7" alt="" />
-                </x-slot:profile>
-                <x-slot:name>
-                    Sophia Turner
-                </x-slot:name>
-                <x-slot:roles>
-                    Digital Marketing Specialist
-                </x-slot:roles>
-                <x-slot:content>
-                    Drives growth through data-driven marketing strategies, SEO optimization, and social media
-                    campaigns.
-                </x-slot:content>
-            </x-member-card>
-
-            <x-member-card>
-                <x-slot:profile>
-                    <img class="rounded-base" src="https://i.pravatar.cc/300?img=7" alt="" />
-                </x-slot:profile>
-                <x-slot:name>
-                    Noah Mitchell
-                </x-slot:name>
-                <x-slot:roles>
-                    DevOps Engineer
-                </x-slot:roles>
-                <x-slot:content>
-                    Ensures reliable deployments and infrastructure with CI/CD pipelines, Docker, and cloud services.
-                </x-slot:content>
-            </x-member-card>
-
-            <x-member-card>
-                <x-slot:profile>
-                    <img class="rounded-base" src="https://i.pravatar.cc/300?img=7" alt="" />
-                </x-slot:profile>
-                <x-slot:name>
-                    Ava Richardson
-                </x-slot:name>
-                <x-slot:roles>
-                    Project Manager
-                </x-slot:roles>
-                <x-slot:content>
-                    Leads cross-functional teams using Agile methodologies to deliver high-quality products on time.
-                </x-slot:content>
-            </x-member-card>
 
         </div>
     </section>
