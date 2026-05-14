@@ -3,7 +3,7 @@
     <main class="min-h-screen flex flex-col  items-center justify-center">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch px-10 py-10">
             @forelse ($members as $member)
-                <x-member-card>
+                <x-member-card link="{{ route('members.show', $member->id) }}">
                     <x-slot:profile>
                         <img class="rounded-base w-36" src="{{ asset($member->cover) }}" alt="" />
                     </x-slot:profile>

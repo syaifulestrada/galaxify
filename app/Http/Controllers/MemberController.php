@@ -15,4 +15,12 @@ class MemberController extends Controller
             'members' => $members,
         ]);
     }
+
+    public function show(Member $member)
+    {
+        return view('members.show', [
+            'subtitle' => 'Members Detail',
+            'member' => $member,
+        ]);
+    }
 }

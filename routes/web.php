@@ -27,4 +27,5 @@ Route::controller(ProjectController::class)->group(function () {
 
 Route::controller(MemberController::class)->group(function () {
     Route::get('/members', 'index')->name('members');
+    Route::get('/members/{member}', 'show')->name('members.show');
 });
