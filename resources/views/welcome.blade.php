@@ -230,34 +230,6 @@
 
     <div class="border-t border-gray-200 dark:border-neutral-800"></div>
 
-    <section id="contactUs" class="min-h-screen w-full px-6 flex flex-col items-center justify-center py-20">
-        <h2 class="font-bold text-3xl md:text-4xl text-center mb-10 md:mb-16 text-gray-900 dark:text-gray-50">Contact
-            Us</h2>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 w-full">
-            <div class="md:col-span-1 md:col-start-2">
-                <x-label for="name">Name</x-label>
-                <x-input name="name" id="name" />
-            </div>
-            <div class="md:col-span-1 md:col-start-2">
-                <x-label for="email">Email</x-label>
-                <x-input type="email" name="email" id="email" />
-            </div>
-            <div class="md:col-span-1 md:col-start-2">
-                <x-label for="phone">Phone</x-label>
-                <x-input type="number" name="phone" id="phone" />
-            </div>
-            <div class="md:col-span-1 md:col-start-2">
-                <x-label for="address">Address</x-label>
-                <x-textarea name="address" id="address" />
-            </div>
-            <div class="md:col-span-1 md:col-start-2">
-                <x-label for="description">Description</x-label>
-                <x-textarea name="description" id="description" />
-            </div>
-            <div class="md:col-span-1 md:col-start-2">
-                <x-primary-button>Submit</x-primary-button>
-            </div>
-    </section>
+    <livewire:contact.create-contact />
 
 </x-layouts.app>
