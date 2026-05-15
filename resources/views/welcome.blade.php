@@ -236,33 +236,27 @@
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 w-full">
             <div class="md:col-span-1 md:col-start-2">
-                <label for="name" class="font-semibold text-gray-900 dark:text-gray-100">Name</label>
-                <input type="text" name="name" id="name"
-                    class="w-full bg-gray-50 dark:bg-neutral-900 border border-gray-300 dark:border-neutral-700 rounded px-3 py-2 text-gray-900 dark:text-gray-100 placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:outline-none focus:ring-1 focus:ring-amber-500 dark:focus:ring-amber-500 focus:border-amber-500 dark:focus:border-amber-500 ring-amber-500">
+                <x-label for="name">Name</x-label>
+                <x-input name="name" id="name" />
             </div>
             <div class="md:col-span-1 md:col-start-2">
-                <label for="email" class="font-semibold text-gray-900 dark:text-gray-100">Email</label>
-                <input type="email" name="email" id="email"
-                    class="w-full bg-gray-50 dark:bg-neutral-900 border border-gray-300 dark:border-neutral-700 rounded px-3 py-2 text-gray-900 dark:text-gray-100 placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:outline-none focus:ring-1 focus:ring-amber-500 dark:focus:ring-amber-500 focus:border-amber-500 dark:focus:border-amber-500 ring-amber-500">
+                <x-label for="email">Email</x-label>
+                <x-input type="email" name="email" id="email" />
             </div>
             <div class="md:col-span-1 md:col-start-2">
-                <label for="phone" class="font-semibold text-gray-900 dark:text-gray-100">Phone</label>
-                <input type="text" name="phone" id="phone"
-                    class="w-full bg-gray-50 dark:bg-neutral-900 border border-gray-300 dark:border-neutral-700 rounded px-3 py-2 text-gray-900 dark:text-gray-100 placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:outline-none focus:ring-1 focus:ring-amber-500 dark:focus:ring-amber-500 focus:border-amber-500 dark:focus:border-amber-500 ring-amber-500">
+                <x-label for="phone">Phone</x-label>
+                <x-input type="number" name="phone" id="phone" />
             </div>
             <div class="md:col-span-1 md:col-start-2">
-                <label for="address" class="font-semibold text-gray-900 dark:text-gray-100">Address</label>
-                <textarea name="address" id="address" cols="30" rows="10"
-                    class="w-full bg-gray-50 dark:bg-neutral-900 border border-gray-300 dark:border-neutral-700 rounded px-3 py-2 text-gray-900 dark:text-gray-100 placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:outline-none focus:ring-1 focus:ring-amber-500 dark:focus:ring-amber-500 focus:border-amber-500 dark:focus:border-amber-500 ring-amber-500"></textarea>
+                <x-label for="address">Address</x-label>
+                <x-textarea name="address" id="address" />
             </div>
             <div class="md:col-span-1 md:col-start-2">
-                <label for="description" class="font-semibold text-gray-900 dark:text-gray-100">Description</label>
-                <textarea name="description" id="description" cols="30" rows="10"
-                    class="w-full bg-gray-50 dark:bg-neutral-900 border border-gray-300 dark:border-neutral-700 rounded px-3 py-2 text-gray-900 dark:text-gray-100 placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:outline-none focus:ring-1 focus:ring-amber-500  dark:focus:ring-amber-500 focus:border-amber-500 dark:focus:border-amber-500"></textarea>
+                <x-label for="description">Description</x-label>
+                <x-textarea name="description" id="description" />
             </div>
             <div class="md:col-span-1 md:col-start-2">
-                <button type="button"
-                    class="text-white px-3 py-2 bg-[#fd9a00] hover:bg-amber-600 rounded font-semibold">Submit</button>
+                <x-primary-button>Submit</x-primary-button>
             </div>
     </section>
 
