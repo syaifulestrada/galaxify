@@ -22,9 +22,9 @@
                         d="M12 3a8.5 8.5 0 1 0 8.2 11.1A7 7 0 0 1 12 3Z" />
                 </svg>
             </button>
-            <button type="button"
+            <a href="{{ route('home') }}" type="button"
                 class="text-white px-3 py-2 bg-[#fd9a00] hover:bg-amber-600 rounded font-semibold">Contact
-                Us</button>
+                Us</a>
             <button data-collapse-toggle="navbar-sticky" type="button"
                 class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-body rounded-base md:hidden hover:bg-neutral-secondary-soft hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-neutral-tertiary"
                 aria-controls="navbar-sticky" aria-expanded="false">
