@@ -7,10 +7,13 @@ use App\Models\Post;
 use Livewire\Attributes\Layout;
 use Livewire\Attributes\Url;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 #[Layout('components.layouts.app', ['subTitle' => 'Posts'])]
 class Postsindex extends Component
 {
+    use WithPagination;
+
     #[Url(as: 'q', except: '')]
     public string $search = '';
 
@@ -19,6 +22,11 @@ class Postsindex extends Component
 
     public bool $showFilter = false;
 
+    public function updatedSearch(): void
+    {
+        $this->resetPage();
+    }
+
     public function toggleCategory(int $id): void
     {
         if (in_array($id, $this->categoryIds)) {
@@ -26,11 +34,14 @@ class Postsindex extends Component
         } else {
             $this->categoryIds[] = $id;
         }
+
+        $this->resetPage();
     }
 
     public function clearCategories(): void
     {
         $this->categoryIds = [];
+        $this->resetPage();
     }
 
     public function render()
