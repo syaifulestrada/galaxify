@@ -54,37 +54,26 @@
             {{-- posts grid --}}
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
                 @forelse ($posts as $post)
-                    <div wire:key="{{ $post->id }}"
-                        class="bg-neutral-primary-soft flex flex-col p-6 border border-default rounded-base shadow-xs dark:bg-neutral-900/60 dark:border-neutral-800 hover:border-amber-500 duration-300">
-
-                        {{-- cover --}}
-                        <div class="w-full aspect-video overflow-hidden rounded-base">
+                    <x-post-card wire:key="{{ $post->id }}">
+                        <x-slot:cover>
                             <img src="{{ asset($post->cover) }}" alt="{{ $post->title }}"
                                 class="w-full h-full object-cover">
-                        </div>
-
-                        {{-- title --}}
-                        <h5 class="mt-6 my-auto text-2xl font-semibold tracking-tight text-heading dark:text-gray-300">
+                        </x-slot:cover>
+                        <x-slot:title>
                             {{ $post->title }}
-                        </h5>
-
-                        {{-- categories --}}
-                        <div class="flex gap-1 flex-wrap mt-auto pt-4">
+                        </x-slot:title>
+                        <x-slot:tags>
                             @foreach ($post->categories as $category)
                                 <span
                                     class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-neutral-primary-soft text-body border border-default dark:bg-neutral-900/60 dark:text-neutral-400 dark:border-neutral-700">
                                     {{ $category->name }}
                                 </span>
                             @endforeach
-                        </div>
-
-                        <div class="mt-auto pt-4">
-                            <div class="text-body dark:text-gray-300">
-                                {{ Str::words($post->content, 20) }}
-                            </div>
-                        </div>
-
-                    </div>
+                        </x-slot:tags>
+                        <x-slot:content>
+                            {{ Str::words($post->content, 20) }}
+                        </x-slot:content>
+                    </x-post-card>
                 @empty
                     <div class="col-span-full text-center text-body">
                         No posts found.
