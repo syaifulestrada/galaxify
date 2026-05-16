@@ -32,6 +32,12 @@ return [
         'label' => 'members',
     ],
     [
+        'type' => 'route',
+        'route' => 'posts.index',
+        'href' => 'posts.index',
+        'label' => 'Blog',
+    ],
+    [
         'type' => 'url',
         'href' => '#contactUs',
         'label' => 'Contact',

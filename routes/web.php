@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ServiceController;
+use App\Livewire\Posts\Postsindex;
 use Illuminate\Support\Facades\Route;
 
 Route::controller(HomeController::class)->group(function () {
@@ -29,3 +30,5 @@ Route::controller(MemberController::class)->group(function () {
     Route::get('/members', 'index')->name('members');
     Route::get('/members/{member}', 'show')->name('members.show');
 });
+
+Route::get('/posts', Postsindex::class)->name('posts.index');
