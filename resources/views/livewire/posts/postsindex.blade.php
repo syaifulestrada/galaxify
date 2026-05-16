@@ -3,25 +3,27 @@
         <div class="flex flex-col gap-6 px-4 sm:px-10 py-10 w-full">
 
             {{-- search + filter toggle --}}
-            <div class="flex gap-2 items-center">
-                <div class="flex-1">
-                    <x-input name="search" id="search" wire:model.live.debounce.300ms="search"
-                        placeholder="Search posts..." />
-                </div>
+            @if ($posts->isNotEmpty())
+                <div class="flex gap-2 items-center">
+                    <div class="flex-1">
+                        <x-input name="search" id="search" wire:model.live.debounce.300ms="search"
+                            placeholder="Search posts..." />
+                    </div>
 
-                <button wire:click="$toggle('showFilter')"
-                    class="flex items-center gap-2 text-sm px-4 py-2 border border-default rounded-base duration-200 shrink-0
+                    <button wire:click="$toggle('showFilter')"
+                        class="flex items-center gap-2 text-sm px-4 py-2 border border-default rounded-base duration-200 shrink-0
                         {{ $showFilter ? 'bg-amber-500 text-white border-amber-500' : 'text-body dark:text-neutral-400 hover:bg-neutral-200 dark:hover:bg-neutral-800' }}">
-                    <x-filament::icon :icon="'heroicon-o-funnel'" class="w-6 h-6" />
-                    Filter
-                    @if (count($categoryIds) > 0)
-                        <span
-                            class="bg-white text-amber-500 text-xs font-bold rounded-full w-4 h-4 flex items-center justify-center">
-                            {{ count($categoryIds) }}
-                        </span>
-                    @endif
-                </button>
-            </div>
+                        <x-filament::icon :icon="'heroicon-o-funnel'" class="w-6 h-6" />
+                        Filter
+                        @if (count($categoryIds) > 0)
+                            <span
+                                class="bg-white text-amber-500 text-xs font-bold rounded-full w-4 h-4 flex items-center justify-center">
+                                {{ count($categoryIds) }}
+                            </span>
+                        @endif
+                    </button>
+                </div>
+            @endif
 
             {{-- collapsible filter --}}
             <div x-show="$wire.showFilter" x-transition:enter="transition ease-out duration-200"
