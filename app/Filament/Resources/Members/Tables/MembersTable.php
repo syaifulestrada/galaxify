@@ -11,8 +11,6 @@ use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\ToggleColumn;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Storage;
 
 class MembersTable
 {
@@ -38,12 +36,7 @@ class MembersTable
             ->recordActions([
                 EditAction::make(),
                 ViewAction::make(),
-                DeleteAction::make()
-                    ->after(function (Model $record) {
-                        if ($record->cover || Storage::disk('public')->exists($record->getConnectionResolver())) {
-                            Storage::disk('public')->delete($record->cover);
-                        }
-                    }),
+                DeleteAction::make(),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([
