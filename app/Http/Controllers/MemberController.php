@@ -8,7 +8,7 @@ class MemberController extends Controller
 {
     public function index()
     {
-        $members = Member::get();
+        $members = Member::whereActive(true)->get();
 
         return view('members.index', [
             'subtitle' => 'Members',

@@ -8,7 +8,7 @@ class ProjectController extends Controller
 {
     public function index()
     {
-        $projects = Project::get();
+        $projects = Project::whereActive(true)->get();
 
         return view('projects.index', [
             'subtitle' => 'Projects',

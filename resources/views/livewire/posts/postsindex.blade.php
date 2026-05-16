@@ -79,8 +79,10 @@
                         </x-post-card>
                     </a>
                 @empty
-                    <div class="col-span-full text-center text-body">
-                        No posts found.
+                    <div class="col-span-full text-center">
+                        <div class="font-semibold">
+                            No posts found.
+                        </div>
                     </div>
                 @endforelse
             </div>

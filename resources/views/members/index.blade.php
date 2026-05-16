@@ -18,7 +18,11 @@
                     </x-slot:content>
                 </x-member-card>
             @empty
-                <div>No members found.</div>
+                <div class="col-span-full text-center">
+                    <div class="font-semibold">
+                        No members available.
+                    </div>
+                </div>
             @endforelse
         </div>
     </main>
