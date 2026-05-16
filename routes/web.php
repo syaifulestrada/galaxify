@@ -6,6 +6,7 @@ use App\Http\Controllers\MemberController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ServiceController;
 use App\Livewire\Posts\Postsindex;
+use App\Livewire\Posts\ShowPost;
 use Illuminate\Support\Facades\Route;
 
 Route::controller(HomeController::class)->group(function () {
@@ -32,3 +33,4 @@ Route::controller(MemberController::class)->group(function () {
 });
 
 Route::get('/posts', Postsindex::class)->name('posts.index');
+Route::get('/posts/{slug}', ShowPost::class)->name('posts.show');
