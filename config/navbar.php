@@ -23,13 +23,13 @@ return [
         'type' => 'route',
         'route' => 'projects',
         'href' => 'projects',
-        'label' => 'projects',
+        'label' => 'Projects',
     ],
     [
         'type' => 'route',
         'route' => 'members',
         'href' => 'members',
-        'label' => 'members',
+        'label' => 'Members',
     ],
     [
         'type' => 'route',
