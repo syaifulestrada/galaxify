@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Illuminate\Support\Facades\Storage;
 
 #[Fillable(['user_id', 'title', 'slug', 'cover', 'content'])]
@@ -18,7 +19,7 @@ class Post extends Model
         });
     }
 
-    public function categories()
+    public function categories(): MorphToMany
     {
         return $this->morphToMany(Category::class, 'categorizable');
     }
