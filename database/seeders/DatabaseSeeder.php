@@ -17,5 +17,8 @@ class DatabaseSeeder extends Seeder
         if (app()->environment('local')) {
             $this->call(AdminUserSeeder::class);
         }
+        $this->call(ProjectCategorySeeder::class);
+        $this->call(ProjectTechStackSeeder::class);
+        $this->call(MemberRoleSeeder::class);
     }
 }
