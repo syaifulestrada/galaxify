@@ -6,16 +6,9 @@ use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
 
-#[Fillable(['name', 'cover', 'description', 'role'])]
+#[Fillable(['name', 'cover', 'description'])]
 class Member extends Model
 {
-    protected function casts(): array
-    {
-        return [
-            'role' => 'array',
-        ];
-    }
-
     protected static function booted(): void
     {
         static::deleted(function (Member $member) {
@@ -23,5 +16,11 @@ class Member extends Model
                 Storage::disk('public')->delete($member->cover);
             }
         });
+    }
+
+    public function roles()
+    {
+        return $this->morphToMany(Category::class, 'categorizable')
+            ->where('type', 'role');
     }
 }

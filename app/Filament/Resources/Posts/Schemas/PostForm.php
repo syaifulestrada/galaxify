@@ -26,7 +26,7 @@ class PostForm
                         TextInput::make('slug')
                             ->readOnly()
                             ->required(),
-                        Select::make('category')
+                        Select::make('categories')
                             ->relationship('categories', 'name')
                             ->searchable()
                             ->preload()

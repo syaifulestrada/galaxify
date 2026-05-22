@@ -4,18 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Illuminate\Support\Facades\Storage;
 
-#[Fillable(['title', 'slug', 'year', 'category', 'client', 'duration', 'tech_stack', 'content', 'cover', 'active'])]
+#[Fillable(['title', 'slug', 'year', 'client', 'duration', 'content', 'cover', 'active'])]
 class Project extends Model
 {
-    protected function casts(): array
-    {
-        return [
-            'tech_stack' => 'array',
-        ];
-    }
-
     protected static function booted(): void
     {
         static::deleted(function (Project $project) {
@@ -23,5 +17,17 @@ class Project extends Model
                 Storage::disk('public')->delete($project->cover);
             }
         });
+    }
+
+    public function categories(): MorphToMany
+    {
+        return $this->morphToMany(Category::class, 'categorizable')
+            ->where('type', 'project');
+    }
+
+    public function techStacks(): MorphToMany
+    {
+        return $this->morphToMany(Category::class, 'categorizable')
+            ->where('type', 'tech_stack');
     }
 }

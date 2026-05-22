@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Illuminate\Support\Facades\Storage;
 
 #[Fillable(['user_id', 'title', 'slug', 'cover', 'content'])]
@@ -25,8 +25,8 @@ class Post extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function categories(): BelongsToMany
+    public function categories(): MorphToMany
     {
-        return $this->belongsToMany(Category::class)->withTimestamps();
+        return $this->morphToMany(Category::class, 'categorizable');
     }
 }

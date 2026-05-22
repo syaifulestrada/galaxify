@@ -2,7 +2,6 @@
 
 namespace App\Filament\Resources\Projects\Schemas;
 
-use App\Enum\TechStackEnum;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
@@ -33,22 +32,20 @@ class ProjectForm
                             ->numeric()
                             ->maxValue(now()->year)
                             ->nullable(),
-                        Select::make('category')
+                        Select::make('categories')
+                            ->relationship('categories', 'name')
+                            ->preload()
+                            ->multiple()
                             ->searchable()
-                            ->options([
-                                'Web Development' => 'Web Development',
-                                'Desktop Development' => 'Desktop Development',
-                                'Mobile Development' => 'Mobile Development',
-                                'Portfolio' => 'Portfolio',
-                                'Embedded System' => 'Embedded System',
-                            ])
-                            ->nullable(),
+                            ->required(),
                         TextInput::make('client')
                             ->nullable(),
                         TextInput::make('duration')
                             ->nullable(),
-                        Select::make('tech_stack')
-                            ->options(TechStackEnum::class)
+                        Select::make('techStacks')
+                            ->relationship('techStacks', 'name')
+                            ->preload()
+                            ->multiple()
                             ->searchable()
                             ->multiple()
                             ->required(),

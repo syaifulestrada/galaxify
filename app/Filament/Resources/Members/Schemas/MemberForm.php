@@ -2,7 +2,6 @@
 
 namespace App\Filament\Resources\Members\Schemas;
 
-use App\Enum\MemberRoleEnum;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
@@ -22,10 +21,10 @@ class MemberForm
                     ->schema([
                         TextInput::make('name')
                             ->required(),
-                        Select::make('role')
-                            ->options(MemberRoleEnum::class)
+                        Select::make('roles')
+                            ->relationship('roles', 'name')
+                            ->preload()
                             ->searchable()
-                            ->multiple()
                             ->required(),
                         FileUpload::make('cover')
                             ->disk('public')

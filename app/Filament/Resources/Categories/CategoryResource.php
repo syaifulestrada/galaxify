@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Categories;
 
+use App\Enum\CategoryTypeEnum;
 use App\Enum\NavigationGroup;
 use App\Filament\Resources\Categories\Pages\ManageCategories;
 use App\Models\Category;
@@ -10,6 +11,7 @@ use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Resources\Resource;
 use Filament\Schemas\Components\Section;
@@ -37,6 +39,9 @@ class CategoryResource extends Resource
                     ->schema([
                         TextInput::make('name')
                             ->required(),
+                        Select::make('type')
+                            ->searchable()
+                            ->options(CategoryTypeEnum::class),
                     ])
                     ->columnSpanFull(),
             ]);
@@ -50,6 +55,8 @@ class CategoryResource extends Resource
                 TextColumn::make('#')
                     ->rowIndex(),
                 TextColumn::make('name')
+                    ->searchable(),
+                TextColumn::make('type')
                     ->searchable(),
                 TextColumn::make('created_at')
                     ->dateTime()
