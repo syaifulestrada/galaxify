@@ -56,6 +56,8 @@ class CategoryResource extends Resource
                     ->rowIndex(),
                 TextColumn::make('name')
                     ->searchable(),
+                TextColumn::make('type')
+                    ->searchable(),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
