@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
 
-#[Fillable(['title', 'slug', 'year', 'category', 'client', 'duration', 'tech_stack', 'content', 'cover', 'active'])]
+#[Fillable(['title', 'slug', 'year', 'client', 'duration', , 'content', 'cover', 'active'])]
 class Project extends Model
 {
     protected function casts(): array
