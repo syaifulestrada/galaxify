@@ -3,7 +3,7 @@
         <div class="w-full max-w-6xl">
 
             {{-- Tombol kembali --}}
-            <a href="{{ route('project.index') }}"
+            <a href="{{ route('projects.index') }}"
                 class="inline-flex items-center gap-2 mb-8 text-white px-3 py-2 bg-[#fd9a00] hover:bg-amber-600 rounded font-semibold">
                 Back
             </a>
@@ -35,17 +35,17 @@
                     <div
                         class="bg-neutral-primary-soft dark:bg-neutral-900/60 border border-default dark:border-neutral-800 rounded-base p-4 hover:border-amber-500 duration-200">
                         <div class="text-xs text-body dark:text-neutral-400 mb-1">Category</div>
-                       <div class="mt-2 flex flex-wrap gap-2">
-                        @foreach ($project->categories as $category)
-                            <span
-                                class="inline-flex items-center px-3 py-1.5 text-sm rounded-full border border-default
+                        <div class="mt-2 flex flex-wrap gap-2">
+                            @foreach ($project->categories as $category)
+                                <span
+                                    class="inline-flex items-center px-3 py-1.5 text-sm rounded-full border border-default
                                        dark:border-neutral-700 text-body dark:text-neutral-300
                                        bg-neutral-primary-soft dark:bg-neutral-900/60
                                        hover:border-amber-500 transition">
-                                {{ $category->name }}
-                            </span>
-                        @endforeach
-                    </div>
+                                    {{ $category->name }}
+                                </span>
+                            @endforeach
+                        </div>
                     </div>
                     <div
                         class="bg-neutral-primary-soft dark:bg-neutral-900/60 border border-default dark:border-neutral-800 rounded-base p-4 hover:border-amber-500 duration-200">

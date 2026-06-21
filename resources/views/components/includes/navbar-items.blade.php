@@ -26,8 +26,13 @@
                 $isActive = false;
 
                 if (($item['type'] ?? null) === 'route') {
-                    $href = route($item['route']);
-                    $isActive = filled($item['route'] ?? null) && request()->routeIs($item['route']);
+                    $routeName = $item['route'] ?? null;
+                    if (Route::has($routeName)) {
+                        $href = route($item['route']);
+                    } elseif (Route::has($routeName . '.index')) {
+                        $href = route($item['route'] . '.index');
+                    }
+                    $isActive = request()->routeIs($routeName) || request()->routeIs($routeName . '.*');
                 } elseif (($item['type'] ?? null) === 'url') {
                     $href = $item['href'] ?? '#';
                 }

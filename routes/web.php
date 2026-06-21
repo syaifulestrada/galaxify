@@ -10,7 +10,7 @@ use App\Livewire\Posts\ShowPost;
 use Illuminate\Support\Facades\Route;
 
 Route::resources([
-    'project' => ProjectController::class,
+    'projects' => ProjectController::class,
 ]);
 
 Route::controller(HomeController::class)->group(function () {

@@ -138,7 +138,7 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-4xl">
 
             @forelse ($projects as $project)
-                <x-project-card link="{{ route('project.show', $project->slug) }}">
+                <x-project-card link="{{ route('projects.show', $project->slug) }}">
                     <x-slot:cover>
                         <img class="rounded-base" src="{{ asset($project->cover) }}" alt="Company Website" />
                     </x-slot:cover>
@@ -166,7 +166,7 @@
         @if ($projects->isNotEmpty())
             <div>
                 <div class="mt-10">
-                    <a href="{{ route('project.index') }}"
+                    <a href="{{ route('projects.index') }}"
                         class="inline-flex items-center gap-2 text-[#fd9a00] border border-[#fd9a00] hover:bg-[#fd9a00] hover:text-white font-semibold px-6 py-3 rounded-lg transition">
                         More Projects
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
