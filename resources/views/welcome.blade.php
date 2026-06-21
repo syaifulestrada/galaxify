@@ -140,7 +140,7 @@
             @forelse ($projects as $project)
                 <x-project-card link="{{ route('projects.show', $project->slug) }}">
                     <x-slot:cover>
-                        <img class="rounded-base" src="{{ asset($project->cover) }}" alt="Company Website" />
+                        <img class="rounded-base" src="{{ Storage::url($project->cover) }}" alt="Company Website" />
                     </x-slot:cover>
 
                     <x-slot:title>
