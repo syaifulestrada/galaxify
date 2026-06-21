@@ -30,4 +30,9 @@ class Project extends Model
         return $this->morphToMany(Category::class, 'categorizable')
             ->where('type', 'tech_stack');
     }
+
+    public function getRouteKeyName(): string
+    {
+        return 'slug';
+    }
 }

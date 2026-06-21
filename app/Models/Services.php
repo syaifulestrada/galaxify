@@ -6,4 +6,10 @@ use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
 
 #[Fillable(['slug', 'title', 'content', 'icon'])]
-class Services extends Model {}
+class Services extends Model
+{
+    public function getRouteKeyName(): string
+    {
+        return 'slug';
+    }
+}

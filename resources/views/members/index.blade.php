@@ -5,13 +5,15 @@
             @forelse ($members as $member)
                 <x-member-card link="{{ route('members.show', $member->id) }}">
                     <x-slot:profile>
-                        <img class="rounded-base w-36" src="{{ asset($member->cover) }}" alt="" />
+                        <img class="rounded-base w-36" src="{{ Storage::url($member->cover) }}" alt="" />
                     </x-slot:profile>
                     <x-slot:name>
                         {{ $member->name }}
                     </x-slot:name>
                     <x-slot:roles>
-                        {{ implode(', ', $member->role) }}
+                        @foreach($member->roles as $role)
+                            {{ $role->name }}
+                        @endforeach
                     </x-slot:roles>
                     <x-slot:content>
                         {{ Str::words($member->description, 20) }}

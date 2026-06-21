@@ -2,7 +2,7 @@
     <main class="min-h-screen flex flex-col w-full items-center justify-start py-12 px-6">
         <div class="w-full max-w-6xl">
 
-            <a href="{{ route('members') }}"
+            <a href="{{ route('members.index') }}"
                 class="inline-flex items-center gap-2 mb-8 text-white px-3 py-2 bg-[#fd9a00] hover:bg-amber-600 rounded font-semibold transition-colors">
                 Back
             </a>
@@ -13,7 +13,7 @@
                 {{-- Header: foto + nama + role --}}
                 <div class="flex flex-col sm:flex-row items-center gap-6 mb-8">
                     <img class="w-36 h-36 object-cover rounded-full ring-4 ring-amber-400/30 shrink-0"
-                        src="{{ asset($member->cover) }}" alt="Photo of {{ $member->name }}" />
+                        src="{{ Storage::url($member->cover) }}" alt="Photo of {{ $member->name }}" />
 
                     {{-- Tambah self-start supaya teks rata atas di mobile --}}
                     <div class="self-start sm:self-center">
@@ -21,7 +21,9 @@
                             {{ $member->name }}
                         </h1>
                         <p class="text-sm text-gray-500 dark:text-gray-400">
-                            {{ implode(', ', $member->role) }}
+                            @foreach($member->roles as $role)
+                                {{ $role->name }}
+                            @endforeach
                         </p>
                     </div>
                 </div>
