@@ -188,15 +188,17 @@
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-4xl items-stretch">
             @forelse ($members as $member)
-                <x-member-card>
+                <x-member-card link="{{ route('members.show', $member->id) }}">
                     <x-slot:profile>
-                        <img class="rounded-base w-36" src="{{ asset($member->cover) }}" alt="" />
+                        <img class="rounded-base w-36" src="{{ Storage::url($member->cover) }}" alt="" />
                     </x-slot:profile>
                     <x-slot:name>
                         {{ $member->name }}
                     </x-slot:name>
                     <x-slot:roles>
-                        {{ implode(', ', $member->role) }}
+                        @foreach($member->roles as  $role)
+                            {{ $role->name }}
+                        @endforeach
                     </x-slot:roles>
                     <x-slot:content>
                         {{ Str::words($member->description, 20) }}
@@ -214,7 +216,7 @@
         @if ($members->isNotEmpty())
             <div>
                 <div class="mt-10">
-                    <a href="{{ route('members') }}"
+                    <a href="{{ route('members.index') }}"
                         class="inline-flex items-center gap-2 text-[#fd9a00] border border-[#fd9a00] hover:bg-[#fd9a00] hover:text-white font-semibold px-6 py-3 rounded-lg transition">
                         More Members
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
