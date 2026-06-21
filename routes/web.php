@@ -4,7 +4,7 @@ use App\Http\Controllers\AboutUsController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\Project\ProjectController;
-use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\Service\ServiceController;
 use App\Livewire\Posts\Postsindex;
 use App\Livewire\Posts\ShowPost;
 use Illuminate\Support\Facades\Route;
@@ -17,12 +17,10 @@ Route::controller(AboutUsController::class)->group(function () {
     Route::get('/aboutus', 'index')->name('aboutus');
 });
 
-Route::controller(ServiceController::class)->group(function () {
-    Route::get('/services', 'index')->name('services');
-    Route::get('/services/{slug}', 'show')->name('services.show');
-});
-
-Route::resource('projects', ProjectController::class);
+Route::resources([
+    'projects' => ProjectController::class,
+    'services' => ServiceController::class,
+]);
 
 Route::controller(MemberController::class)->group(function () {
     Route::get('/members', 'index')->name('members');
