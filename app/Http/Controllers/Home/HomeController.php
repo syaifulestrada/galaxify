@@ -1,15 +1,20 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Home;
 
+use App\Http\Controllers\Controller;
 use App\Models\AboutUs;
 use App\Models\Member;
 use App\Models\Project;
 use App\Models\Services;
+use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function index()
+    /**
+     * Handle the incoming request.
+     */
+    public function __invoke(Request $request)
     {
         $aboutUs = AboutUs::first();
         $services = Services::get()->take(4);
