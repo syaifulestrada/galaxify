@@ -9,10 +9,6 @@ use App\Livewire\Posts\Postsindex;
 use App\Livewire\Posts\ShowPost;
 use Illuminate\Support\Facades\Route;
 
-Route::resources([
-    'projects' => ProjectController::class,
-]);
-
 Route::controller(HomeController::class)->group(function () {
     Route::get('/', 'index')->name('home');
 });
@@ -25,6 +21,8 @@ Route::controller(ServiceController::class)->group(function () {
     Route::get('/services', 'index')->name('services');
     Route::get('/services/{slug}', 'show')->name('services.show');
 });
+
+Route::resource('projects', ProjectController::class);
 
 Route::controller(MemberController::class)->group(function () {
     Route::get('/members', 'index')->name('members');

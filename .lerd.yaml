@@ -1,0 +1,13 @@
+domains:
+    - galaxify
+php_version: "8.5"
+framework: laravel
+framework_version: "13"
+services:
+    - mysql
+    - mailpit
+    - redis
+workers:
+    - queue
+    - schedule
+    - vite
