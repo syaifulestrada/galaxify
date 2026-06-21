@@ -21,8 +21,8 @@ return [
     ],
     [
         'type' => 'route',
-        'route' => 'projects',
-        'href' => 'projects',
+        'route' => 'project.index',
+        'href' => 'project.index',
         'label' => 'Projects',
     ],
     [

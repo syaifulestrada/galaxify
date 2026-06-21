@@ -3,7 +3,7 @@
         <div class="w-full max-w-6xl">
 
             {{-- Tombol kembali --}}
-            <a href="{{ route('projects') }}"
+            <a href="{{ route('project.index') }}"
                 class="inline-flex items-center gap-2 mb-8 text-white px-3 py-2 bg-[#fd9a00] hover:bg-amber-600 rounded font-semibold">
                 Back
             </a>
@@ -16,7 +16,7 @@
                 </h1>
 
                 <div class="mb-6">
-                    <img src="{{ asset($project->cover) }}" class="rounded ">
+                    <img src="{{ Storage::url($project->cover) }}" class="rounded ">
                 </div>
 
                 <hr class="border-default dark:border-neutral-700 mb-6" />
@@ -35,9 +35,17 @@
                     <div
                         class="bg-neutral-primary-soft dark:bg-neutral-900/60 border border-default dark:border-neutral-800 rounded-base p-4 hover:border-amber-500 duration-200">
                         <div class="text-xs text-body dark:text-neutral-400 mb-1">Category</div>
-                        <div class="font-semibold text-heading dark:text-gray-50 text-sm">
-                            {{ $project->category ?? '-' }}
-                        </div>
+                       <div class="mt-2 flex flex-wrap gap-2">
+                        @foreach ($project->categories as $category)
+                            <span
+                                class="inline-flex items-center px-3 py-1.5 text-sm rounded-full border border-default
+                                       dark:border-neutral-700 text-body dark:text-neutral-300
+                                       bg-neutral-primary-soft dark:bg-neutral-900/60
+                                       hover:border-amber-500 transition">
+                                {{ $category->name }}
+                            </span>
+                        @endforeach
+                    </div>
                     </div>
                     <div
                         class="bg-neutral-primary-soft dark:bg-neutral-900/60 border border-default dark:border-neutral-800 rounded-base p-4 hover:border-amber-500 duration-200">
@@ -55,20 +63,19 @@
                     </div>
                 </div>
 
-
                 <hr class="border-default dark:border-neutral-700 mb-6" />
 
-                @if ($project->tech_stack)
+                @if ($project->techStacks->isNotEmpty())
                     <div class="mb-8">
                         <h2
                             class="text-sm font-semibold text-body dark:text-neutral-400 uppercase tracking-widest mb-4">
                             Tech Stack
                         </h2>
                         <div class="flex flex-wrap gap-2">
-                            @foreach ($project->tech_stack ?? [] as $tech)
+                            @foreach ($project->techStacks ?? [] as $techStack)
                                 <span
                                     class="px-3 py-1.5 text-sm rounded-full border border-default dark:border-neutral-700 text-body dark:text-neutral-300 bg-neutral-primary-soft dark:bg-neutral-900/60 hover:border-amber-500 duration-200">
-                                    {{ $tech }}
+                                    {{ $techStack->name }}
                                 </span>
                             @endforeach
                         </div>
