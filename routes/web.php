@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\AboutUsController;
+use App\Http\Controllers\AboutUs\AboutUsController;
 use App\Http\Controllers\Home\HomeController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\Project\ProjectController;
@@ -10,10 +10,7 @@ use App\Livewire\Posts\ShowPost;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', HomeController::class)->name('home');
-
-Route::controller(AboutUsController::class)->group(function () {
-    Route::get('/aboutus', 'index')->name('aboutus');
-});
+Route::get('/aboutus', AboutUsController::class)->name('aboutus');
 
 Route::resources([
     'projects' => ProjectController::class,
