@@ -89,6 +89,10 @@ class AdminPanelProvider extends PanelProvider
                     ->label(fn () => auth()->user()->name)
                     ->url(fn (): string => EditProfilePage::getUrl())
                     ->icon('heroicon-m-user-circle'),
+                'home' => Action::make('home')
+                    ->label('Home')
+                    ->url(fn (): string => route('home'))
+                    ->icon('heroicon-m-home')
             ]);
     }
 }
