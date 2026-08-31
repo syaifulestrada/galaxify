@@ -47,7 +47,7 @@
             @endphp
 
             <li>
-                <a href="{{ $href }}" class="{{ $itemClasses }} {{ $activeClasses }}" wire:navigate>
+                <a href="{{ $href }}" class="{{ $itemClasses }} {{ $activeClasses }}">
                     {{ $label }}
                 </a>
             </li>

@@ -92,7 +92,7 @@ class AdminPanelProvider extends PanelProvider
                 'home' => Action::make('home')
                     ->label('Home')
                     ->url(fn (): string => route('home'))
-                    ->icon('heroicon-m-home')
+                    ->icon('heroicon-m-home'),
             ]);
     }
 }
